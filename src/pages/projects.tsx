@@ -357,7 +357,6 @@ export const getStaticProps: GetStaticProps<ProjectsPageProps> = async ({
         repos,
         ...(await serverSideTranslations(locale, ['common'])),
       },
-      revalidate: 3600, // Revalidate every hour
     }
   } catch (error) {
     console.error('Error in getStaticProps:', error)
@@ -368,7 +367,6 @@ export const getStaticProps: GetStaticProps<ProjectsPageProps> = async ({
         error: 'Failed to load repositories from GitHub',
         ...(await serverSideTranslations(locale, ['common'])),
       },
-      revalidate: 300, // Retry after 5 minutes on error
     }
   }
 }
