@@ -10,7 +10,7 @@ export const MainLayout: React.FC<MainLayoutProps> = ({
   children,
   ...props
 }) => (
-  <Container maxW={{ base: 'container.xl', xl: '85vw', '2xl': '90vw' }} px={{ base: 4, lg: 8, xl: 16, '2xl': 20 }}>
+  <Container maxW={{ base: 'container.xl', lg: '90vw', xl: '92vw', '2xl': '95vw' }} px={{ base: 4, lg: 8, xl: 16, '2xl': 20 }}>
     <Flex
       minH='100vh'
       direction='column'
