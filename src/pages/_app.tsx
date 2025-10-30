@@ -22,6 +22,7 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
       <Head>
         <meta charSet='utf-8' />
         <meta content='width=device-width, initial-scale=1' name='viewport' />
+        <link rel='icon' href='data:,' />
         <link
           rel='preload'
           href='/fonts/hanson-bold.ttf'
