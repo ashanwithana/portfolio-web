@@ -16,7 +16,7 @@ export const FloatingSocial: React.FC = () => {
       <MotionBox
         position='fixed'
         bottom={{ base: '4', md: '6' }}
-        right={{ base: '4', md: '6' }}
+        right={{ base: '4', md: '6', lg: '8', xl: '2', '2xl': '16' }}
         zIndex='tooltip'
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
@@ -75,7 +75,7 @@ export const FloatingSocial: React.FC = () => {
       <MotionBox
         position='fixed'
         bottom={{ base: '20', md: '24' }}
-        right={{ base: '4', md: '6' }}
+        right={{ base: '4', md: '6', lg: '8', xl: '2', '2xl': '16' }}
         zIndex='tooltip'
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
