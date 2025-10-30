@@ -1,7 +1,7 @@
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 // import { NextSeo } from 'next-seo'
-import { useTranslation } from 'next-i18next'
+
 import {
   Box,
   Container,
@@ -28,7 +28,7 @@ interface BlogPostPageProps {
 }
 
 const BlogPostPage: NextPage<BlogPostPageProps> = ({ post }) => {
-  const { t: _ } = useTranslation('common')
+  // Translation not needed for this page
 
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString('en-US', {

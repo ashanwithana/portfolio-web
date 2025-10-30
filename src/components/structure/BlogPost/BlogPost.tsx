@@ -78,15 +78,15 @@ export const BlogPost: React.FC<BlogPostType> = ({
         )}
         <Box px='4' py='4' flex='1' display='flex' flexDir='column'>
           <Text fontWeight='bold' fontSize='lg' mb='2'>
-            <NextLink href={`/blog/${slug}`} passHref legacyBehavior>
-              <LinkOverlay
-                onClick={() =>
-                  posthog.capture('blog_post_clicked', { title, slug })
-                }
-              >
-                {title}
-              </LinkOverlay>
-            </NextLink>
+            <LinkOverlay
+              as={NextLink}
+              href={`/blog/${slug}`}
+              onClick={() =>
+                posthog.capture('blog_post_clicked', { title, slug })
+              }
+            >
+              {title}
+            </LinkOverlay>
           </Text>
           <Text color='gray.600' fontSize='sm' mb='3' flex='1'>
             {excerpt}

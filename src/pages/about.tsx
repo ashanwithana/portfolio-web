@@ -172,11 +172,11 @@ export default function AboutPage() {
                   color={textColor}
                   fontFamily='body'
                 >
-                  Hello! I'm Ashan Withana, a Software Engineer and Backend
+                  Hello! I&apos;m Ashan Withana, a Software Engineer and Backend
                   Developer based in Padukka, Sri Lanka. With over 3 years of
                   hands-on experience, I specialize in building robust,
                   scalable, and high performing systems using Laravel, .NET, and
-                  Python. I'm skilled in developing RESTful APIs, optimizing
+                  Python. I&apos;m skilled in developing RESTful APIs, optimizing
                   databases, and integrating cloud-native solutions to support
                   modern, data-driven applications.
                 </Text>
@@ -187,9 +187,9 @@ export default function AboutPage() {
                   fontFamily='body'
                 >
                   Currently pursuing my MSc in Artificial Intelligence at Ural
-                  Federal University, Russia, I'm passionate about designing
+                  Federal University, Russia, I&apos;m passionate about designing
                   end-to-end system workflows that are both efficient and
-                  maintainable. I'm known for writing clean, well-structured
+                  maintainable. I&apos;m known for writing clean, well-structured
                   code and solving complex backend problems with practical,
                   user-focused solutions.
                 </Text>
@@ -200,7 +200,7 @@ export default function AboutPage() {
                   fontFamily='body'
                 >
                   As a strong team player, I communicate effectively and enjoy
-                  working in collaborative, agile environments. I'm always eager
+                  working in collaborative, agile environments. I&apos;m always eager
                   to learn new technologies, follow best practices, and
                   contribute to high-quality software that delivers real value.
                   My experience spans from full-stack development to specialized

@@ -34,8 +34,7 @@ const getPrimaryColor = (skills: ISkillGroup['skills']) => {
   return skills[0]?.color || '#6366f1'
 }
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
-export interface SkillGroupProps extends ISkillGroup { }
+export type SkillGroupProps = ISkillGroup
 
 export const SkillGroup: React.FC<SkillGroupProps> = ({ category, skills }) => {
   const [borderColor, setBorderColor] = useState('transparent')

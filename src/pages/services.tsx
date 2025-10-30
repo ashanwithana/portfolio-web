@@ -11,7 +11,7 @@ const ServicesPage: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Services - {NAME}</title>
+        <title>{`Services - ${NAME}`}</title>
         <meta
           name='description'
           content='Professional software development services including backend development, full-stack solutions, cloud deployment, and technical consulting.'

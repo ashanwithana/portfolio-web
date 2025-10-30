@@ -93,7 +93,46 @@ interface Config {
   defaultLocale: string
   revalidateDelay: number
   copyright: string
-  seo: any // DefaultSeoProps
+  seo: {
+    title: string
+    description: string
+    canonical: string
+    openGraph: {
+      type: string
+      locale: string
+      url: string
+      title: string
+      description: string
+      site_name: string
+      images: Array<{
+        url: string
+        width: number
+        height: number
+        alt: string
+      }>
+    }
+    twitter: {
+      cardType: string
+      site: string
+    }
+    languageAlternates: Array<{
+      hrefLang: string
+      href: string
+    }>
+    additionalMetaTags: Array<{
+      httpEquiv?: string
+      property?: string
+      name?: string
+      content: string
+    }>
+    additionalLinkTags: Array<{
+      rel: string
+      sizes?: string
+      href: string
+      type?: string
+      color?: string
+    }>
+  }
   email: string
   email_link: string
   phone: string

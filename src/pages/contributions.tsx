@@ -1,5 +1,5 @@
 import { GetStaticProps } from 'next'
-import { useTranslation } from 'next-i18next'
+
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { Box, Container, Heading, SimpleGrid, VStack } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
@@ -30,7 +30,7 @@ const item = {
 }
 
 const ContributionsPage: React.FC = () => {
-  const { t: _ } = useTranslation('common')
+  // Translation not needed for this page
 
   return (
     <>

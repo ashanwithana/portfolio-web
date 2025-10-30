@@ -74,7 +74,7 @@ export const Contact: React.FC = () => {
       })
 
       reset()
-    } catch (error) {
+    } catch {
       toast({
         title: 'There was an error sending your message.',
         status: 'error',

@@ -13,11 +13,9 @@ const Project: NextPage = () => {
           <Heading as='h1' variant='banner' size='hero'>
             Coming Soon
           </Heading>
-          <NextLink href='/' passHref legacyBehavior>
-            <Button as='a' variant='outline'>
-              Back to Home
-            </Button>
-          </NextLink>
+          <Button as={NextLink} href='/' variant='outline'>
+            Back to Home
+          </Button>
         </VStack>
       </Center>
     </MainLayout>

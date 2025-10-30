@@ -49,56 +49,55 @@ export const Banner: React.FC = () => {
         >
           {t('hero-title')}
         </MotionHeading>
-        <NextLink href='/#projects' passHref legacyBehavior>
-          <MotionButton
-            as='a'
-            variant='accent'
-            sx={{
-              '&:hover svg': {
-                transform: 'scaleX(1.1)',
-              },
-            }}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.2 }}
-            onClick={() => posthog.capture('hero_button_clicked')}
-          >
-            <chakra.span mr='4'>{t('hero-cta')}</chakra.span>
-            <ButtonArrow
-              transformOrigin='left'
-              transition='transform 0.2s ease-in-out, fill 0.2s ease-in-out'
-            />
-          </MotionButton>
-        </NextLink>
+        <MotionButton
+          as={NextLink}
+          href='/#projects'
+          variant='accent'
+          sx={{
+            '&:hover svg': {
+              transform: 'scaleX(1.1)',
+            },
+          }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.2, duration: 0.2 }}
+          onClick={() => posthog.capture('hero_button_clicked')}
+        >
+          <chakra.span mr='4'>{t('hero-cta')}</chakra.span>
+          <ButtonArrow
+            transformOrigin='left'
+            transition='transform 0.2s ease-in-out, fill 0.2s ease-in-out'
+          />
+        </MotionButton>
       </VStack>
 
       {/* ASCII Art Name - Clickable */}
-      <NextLink href='/about' passHref legacyBehavior>
-        <Box
-          as='a'
-          position='absolute'
-          bottom='8'
-          right='8'
-          display={{ base: 'none', lg: 'block' }}
-          opacity='0.3'
-          cursor='pointer'
-          transition='all 0.3s ease'
-          _hover={{
-            opacity: '0.6',
-            transform: 'scale(1.05)',
-          }}
-          title='Click to learn more about me'
-          onClick={() => posthog.capture('ascii_name_clicked')}
+      <Box
+        as={NextLink}
+        href='/about'
+        position='absolute'
+        bottom='8'
+        right='8'
+        display={{ base: 'none', lg: 'block' }}
+        opacity='0.3'
+        cursor='pointer'
+        transition='all 0.3s ease'
+        _hover={{
+          opacity: '0.6',
+          transform: 'scale(1.05)',
+        }}
+        title='Click to learn more about me'
+        onClick={() => posthog.capture('ascii_name_clicked')}
+      >
+        <Text
+          fontFamily='monospace'
+          fontSize='sm'
+          lineHeight='1'
+          color='white'
+          whiteSpace='pre'
+          textShadow='2px 2px 4px rgba(0,0,0,0.5)'
         >
-          <Text
-            fontFamily='monospace'
-            fontSize='sm'
-            lineHeight='1'
-            color='white'
-            whiteSpace='pre'
-            textShadow='2px 2px 4px rgba(0,0,0,0.5)'
-          >
-            {`  ▄▄▄       ██████  ██░ ██  ▄▄▄       ███▄    █ 
+          {`  ▄▄▄       ██████  ██░ ██  ▄▄▄       ███▄    █ 
  ▒████▄   ▒██    ▒ ▓██░ ██▒▒████▄     ██ ▀█   █ 
  ▒██  ▀█▄ ░ ▓██▄   ▒██▀▀██░▒██  ▀█▄  ▓██  ▀█ ██▒
  ░██▄▄▄▄██  ▒   ██▒░▓█ ░██ ░██▄▄▄▄██ ▓██▒  ▐▌██▒
@@ -107,9 +106,8 @@ export const Banner: React.FC = () => {
    ▒   ▒▒ ░ ░▒  ░ ░ ▒ ░▒░ ░  ▒   ▒▒ ░░ ░░   ░ ▒░
    ░   ▒  ░  ░  ░   ░  ░░ ░  ░   ▒      ░   ░ ░ 
        ░  ░     ░   ░  ░  ░      ░  ░         ░`}
-          </Text>
-        </Box>
-      </NextLink>
+        </Text>
+      </Box>
     </MotionFlex>
   )
 }

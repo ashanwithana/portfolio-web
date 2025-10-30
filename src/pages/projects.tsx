@@ -2,7 +2,7 @@ import type { GetStaticProps, NextPage } from 'next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useState, useMemo } from 'react'
 // import { NextSeo } from 'next-seo'
-import { useTranslation } from 'next-i18next'
+
 import {
   Container,
   Heading,
@@ -35,7 +35,7 @@ interface ProjectsPageProps {
 }
 
 const ProjectsPage: NextPage<ProjectsPageProps> = ({ repos, error }) => {
-  const { t: _ } = useTranslation('common')
+  // Translation not needed for this page
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedLanguage, setSelectedLanguage] = useState('all')
   const [showArchived, setShowArchived] = useState('hide')

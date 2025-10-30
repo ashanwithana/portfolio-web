@@ -1,13 +1,11 @@
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
-import { Analytics } from '@vercel/analytics/react'
 import { appWithTranslation } from 'next-i18next'
 // import { DefaultSeo } from 'next-seo'
 import posthog from 'posthog-js'
 import { PostHogProvider } from 'posthog-js/react'
 import { ChakraProvider } from '@chakra-ui/react'
 import { Fonts } from '@components/meta'
-import { config } from '@config/config'
 import { useSetupPostHog } from '@utils/hooks/use-setup-posthog'
 import { theme } from '../theme/theme'
 

@@ -45,7 +45,7 @@ const Blog: NextPage<BlogProps> = () => {
             Blog Coming Soon
           </Heading>
           <Text fontSize='xl' color='whiteAlpha.900' fontWeight='medium'>
-            I'm currently crafting amazing content about software development,
+            I&apos;m currently crafting amazing content about software development,
             technology insights, and programming best practices.
           </Text>
           <Text fontSize='lg' color='whiteAlpha.800'>

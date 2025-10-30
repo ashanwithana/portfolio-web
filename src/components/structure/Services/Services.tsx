@@ -35,6 +35,19 @@ interface ServiceCardProps {
 const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
   const cardBg = useColorModeValue('white', 'gray.800')
   const borderColor = useColorModeValue('gray.200', 'gray.600')
+  const badgeBg = useColorModeValue('black', 'white')
+  const badgeColor = useColorModeValue('white', 'black')
+  const techBg = useColorModeValue('gray.50', 'gray.700')
+  const techColor = useColorModeValue('gray.700', 'gray.300')
+  const titleColor = service.popular ? 'purple.500' : useColorModeValue('gray.800', 'white')
+  const subtitleColor = useColorModeValue('gray.600', 'gray.300')
+  const techIconBg = useColorModeValue('gray.100', 'gray.700')
+  const techIconColor = useColorModeValue('gray.700', 'gray.300')
+  const includesColor = useColorModeValue('gray.800', 'white')
+  const featureColor = useColorModeValue('gray.700', 'gray.300')
+  const buttonBg = useColorModeValue('black', 'white')
+  const buttonColor = useColorModeValue('white', 'black')
+  const buttonHoverBg = useColorModeValue('gray.800', 'gray.200')
 
   return (
     <Card
@@ -57,8 +70,8 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
           top='-12px'
           left='50%'
           transform='translateX(-50%)'
-          bg={useColorModeValue('black', 'white')}
-          color={useColorModeValue('white', 'black')}
+          bg={badgeBg}
+          color={badgeColor}
           px={3}
           py={1}
           borderRadius='full'
@@ -80,7 +93,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
             <Box
               p={{ base: 3, lg: 2 }}
               borderRadius='xl'
-              bg={useColorModeValue('gray.50', 'gray.700')}
+              bg={techBg}
               display='flex'
               alignItems='center'
               justifyContent='center'
@@ -142,7 +155,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
               color={useColorModeValue('gray.800', 'white')}
               fontSize={{ base: 'md', lg: 'sm' }}
             >
-              What's included:
+              What&apos;s included:
             </Text>
             <List spacing={{ base: 2, lg: 1 }}>
               {service.features.slice(0, 4).map((feature, index) => (
@@ -264,8 +277,8 @@ export const Services: React.FC = () => {
               maxW='md'
               fontSize={{ base: 'sm', md: 'md' }}
             >
-              Let's discuss your requirements and create something amazing
-              together. I'm here to help you build robust, scalable solutions.
+              Let&apos;s discuss your requirements and create something amazing
+              together. I&apos;m here to help you build robust, scalable solutions.
             </Text>
             <VStack spacing={3} w='full' display={{ base: 'flex', md: 'none' }}>
               <Button

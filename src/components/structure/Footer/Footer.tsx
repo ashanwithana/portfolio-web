@@ -24,6 +24,9 @@ export const Footer: React.FC = () => {
   const textColor = useColorModeValue('gray.600', 'gray.400')
   const linkColor = useColorModeValue('gray.800', 'gray.200')
   const borderColor = useColorModeValue('gray.200', 'gray.700')
+  const hoverColor = useColorModeValue('black', 'white')
+  const hoverBg = useColorModeValue('gray.100', 'gray.700')
+  const dividerColor = useColorModeValue('gray.400', 'gray.500')
 
   return (
     <Flex
@@ -45,7 +48,7 @@ export const Footer: React.FC = () => {
           © {new Date().getFullYear()}{' '}
           {config.copyright.replace(/©\s*\d{4}\s*/, '')}
         </Text>
-        <Text color={useColorModeValue('gray.400', 'gray.500')}>•</Text>
+        <Text color={dividerColor}>•</Text>
         <Text>Sri Lanka 🇱🇰</Text>
       </HStack>
 
@@ -59,7 +62,7 @@ export const Footer: React.FC = () => {
             fontWeight='medium'
             color={linkColor}
             _hover={{
-              color: useColorModeValue('black', 'white'),
+              color: hoverColor,
               textDecoration: 'none',
             }}
             transition='color 0.2s ease'
@@ -83,7 +86,7 @@ export const Footer: React.FC = () => {
             fontWeight='medium'
             color={linkColor}
             _hover={{
-              color: useColorModeValue('black', 'white'),
+              color: hoverColor,
               textDecoration: 'none',
             }}
             transition='color 0.2s ease'
@@ -116,8 +119,8 @@ export const Footer: React.FC = () => {
           size='sm'
           color={textColor}
           _hover={{
-            color: useColorModeValue('black', 'white'),
-            bg: useColorModeValue('gray.100', 'gray.700'),
+            color: hoverColor,
+            bg: hoverBg,
           }}
           onClick={() => {
             toggleColorMode()
@@ -133,8 +136,8 @@ export const Footer: React.FC = () => {
           size='sm'
           color={textColor}
           _hover={{
-            color: useColorModeValue('black', 'white'),
-            bg: useColorModeValue('gray.100', 'gray.700'),
+            color: hoverColor,
+            bg: hoverBg,
           }}
           onClick={() => window.scrollTo(0, 0)}
         />

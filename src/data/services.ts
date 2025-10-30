@@ -52,7 +52,7 @@ export const services: Service[] = [
     description:
       'Cross-platform mobile applications with native performance and modern UI/UX.',
     icon: 'smartphone',
-    technologies: ['Flutter', 'React Native', 'Firebase'],
+    technologies: ['Flutter', 'React Native', 'Firebase', 'Swift'],
     features: [
       'React Native Development',
       'iOS & Android Compatibility',

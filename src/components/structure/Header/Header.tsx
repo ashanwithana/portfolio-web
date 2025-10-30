@@ -60,165 +60,158 @@ export const Header: React.FC = () => {
           borderColor={borderColor}
         >
           {/* Navigation Links - Left side */}
-          <NextLink href='/about' passHref legacyBehavior>
-            <Button
-              as='a'
-              variant='ghost'
-              size='sm'
-              fontWeight='medium'
-              color={isActiveRoute('/about') ? activeTextColor : textColor}
-              bg={isActiveRoute('/about') ? activeBg : 'transparent'}
-              borderRadius='full'
-              px='4'
-              py='2'
-              fontSize='sm'
-              _hover={{
-                bg: activeBg,
-                color: hoverTextColor,
-                transform: 'translateY(-1px)',
-              }}
-              transition='all 0.2s ease-in-out'
-            >
-              About
-            </Button>
-          </NextLink>
+          <Button
+            as={NextLink}
+            href='/about'
+            variant='ghost'
+            size='sm'
+            fontWeight='medium'
+            color={isActiveRoute('/about') ? activeTextColor : textColor}
+            bg={isActiveRoute('/about') ? activeBg : 'transparent'}
+            borderRadius='full'
+            px='4'
+            py='2'
+            fontSize='sm'
+            _hover={{
+              bg: activeBg,
+              color: hoverTextColor,
+              transform: 'translateY(-1px)',
+            }}
+            transition='all 0.2s ease-in-out'
+          >
+            About
+          </Button>
 
-          <NextLink href='/projects' passHref legacyBehavior>
-            <Button
-              as='a'
-              variant='ghost'
-              size='sm'
-              fontWeight='medium'
-              color={isActiveRoute('/projects') ? activeTextColor : textColor}
-              bg={isActiveRoute('/projects') ? activeBg : 'transparent'}
-              borderRadius='full'
-              px='4'
-              py='2'
-              fontSize='sm'
-              _hover={{
-                bg: activeBg,
-                color: hoverTextColor,
-                transform: 'translateY(-1px)',
-              }}
-              transition='all 0.2s ease-in-out'
-            >
-              Projects
-            </Button>
-          </NextLink>
+          <Button
+            as={NextLink}
+            href='/projects'
+            variant='ghost'
+            size='sm'
+            fontWeight='medium'
+            color={isActiveRoute('/projects') ? activeTextColor : textColor}
+            bg={isActiveRoute('/projects') ? activeBg : 'transparent'}
+            borderRadius='full'
+            px='4'
+            py='2'
+            fontSize='sm'
+            _hover={{
+              bg: activeBg,
+              color: hoverTextColor,
+              transform: 'translateY(-1px)',
+            }}
+            transition='all 0.2s ease-in-out'
+          >
+            Projects
+          </Button>
 
-          <NextLink href='/services' passHref legacyBehavior>
-            <Button
-              as='a'
-              variant='ghost'
-              size='sm'
-              fontWeight='medium'
-              color={isActiveRoute('/services') ? activeTextColor : textColor}
-              bg={isActiveRoute('/services') ? activeBg : 'transparent'}
-              borderRadius='full'
-              px='4'
-              py='2'
-              fontSize='sm'
-              _hover={{
-                bg: activeBg,
-                color: hoverTextColor,
-                transform: 'translateY(-1px)',
-              }}
-              transition='all 0.2s ease-in-out'
-            >
-              Services
-            </Button>
-          </NextLink>
+          <Button
+            as={NextLink}
+            href='/services'
+            variant='ghost'
+            size='sm'
+            fontWeight='medium'
+            color={isActiveRoute('/services') ? activeTextColor : textColor}
+            bg={isActiveRoute('/services') ? activeBg : 'transparent'}
+            borderRadius='full'
+            px='4'
+            py='2'
+            fontSize='sm'
+            _hover={{
+              bg: activeBg,
+              color: hoverTextColor,
+              transform: 'translateY(-1px)',
+            }}
+            transition='all 0.2s ease-in-out'
+          >
+            Services
+          </Button>
 
           {/* Home Icon - Center */}
-          <NextLink href='/' passHref legacyBehavior>
-            <IconButton
-              as='a'
-              aria-label='Home'
-              icon={<AppIcon iconName='home' strokeWidth={1} />}
-              variant='ghost'
-              size='sm'
-              color={isActiveRoute('/') ? activeTextColor : textColor}
-              bg={isActiveRoute('/') ? activeBg : 'transparent'}
-              borderRadius='full'
-              _hover={{
-                bg: activeBg,
-                color: hoverTextColor,
-                transform: 'translateY(-1px) scale(1.05)',
-              }}
-              transition='all 0.2s ease-in-out'
-            />
-          </NextLink>
+          <IconButton
+            as={NextLink}
+            href='/'
+            aria-label='Home'
+            icon={<AppIcon iconName='home' strokeWidth={1} />}
+            variant='ghost'
+            size='sm'
+            color={isActiveRoute('/') ? activeTextColor : textColor}
+            bg={isActiveRoute('/') ? activeBg : 'transparent'}
+            borderRadius='full'
+            _hover={{
+              bg: activeBg,
+              color: hoverTextColor,
+              transform: 'translateY(-1px) scale(1.05)',
+            }}
+            transition='all 0.2s ease-in-out'
+          />
 
           {/* Navigation Links - Right side */}
-          <NextLink href='/contributions' passHref legacyBehavior>
-            <Button
-              as='a'
-              variant='ghost'
-              size='sm'
-              fontWeight='medium'
-              color={
-                isActiveRoute('/contributions') ? activeTextColor : textColor
-              }
-              bg={isActiveRoute('/contributions') ? activeBg : 'transparent'}
-              borderRadius='full'
-              px='4'
-              py='2'
-              fontSize='sm'
-              _hover={{
-                bg: activeBg,
-                color: hoverTextColor,
-                transform: 'translateY(-1px)',
-              }}
-              transition='all 0.2s ease-in-out'
-            >
-              Contributions
-            </Button>
-          </NextLink>
+          <Button
+            as={NextLink}
+            href='/contributions'
+            variant='ghost'
+            size='sm'
+            fontWeight='medium'
+            color={
+              isActiveRoute('/contributions') ? activeTextColor : textColor
+            }
+            bg={isActiveRoute('/contributions') ? activeBg : 'transparent'}
+            borderRadius='full'
+            px='4'
+            py='2'
+            fontSize='sm'
+            _hover={{
+              bg: activeBg,
+              color: hoverTextColor,
+              transform: 'translateY(-1px)',
+            }}
+            transition='all 0.2s ease-in-out'
+          >
+            Contributions
+          </Button>
 
-          <NextLink href='/blog' passHref legacyBehavior>
-            <Button
-              as='a'
-              variant='ghost'
-              size='sm'
-              fontWeight='medium'
-              color={isActiveRoute('/blog') ? activeTextColor : textColor}
-              bg={isActiveRoute('/blog') ? activeBg : 'transparent'}
-              borderRadius='full'
-              px='4'
-              py='2'
-              fontSize='sm'
-              _hover={{
-                bg: activeBg,
-                color: hoverTextColor,
-                transform: 'translateY(-1px)',
-              }}
-              transition='all 0.2s ease-in-out'
-            >
-              Blog
-            </Button>
-          </NextLink>
+          <Button
+            as={NextLink}
+            href='/blog'
+            variant='ghost'
+            size='sm'
+            fontWeight='medium'
+            color={isActiveRoute('/blog') ? activeTextColor : textColor}
+            bg={isActiveRoute('/blog') ? activeBg : 'transparent'}
+            borderRadius='full'
+            px='4'
+            py='2'
+            fontSize='sm'
+            _hover={{
+              bg: activeBg,
+              color: hoverTextColor,
+              transform: 'translateY(-1px)',
+            }}
+            transition='all 0.2s ease-in-out'
+          >
+            Blog
+          </Button>
 
-          <NextLink href='/#contact' passHref legacyBehavior>
-            <Button
-              as='a'
-              variant='ghost'
-              size='sm'
-              fontWeight='medium'
-              color={textColor}
-              borderRadius='full'
-              px='4'
-              py='2'
-              fontSize='sm'
-              _hover={{
-                bg: activeBg,
-                color: hoverTextColor,
-                transform: 'translateY(-1px)',
-              }}
-              transition='all 0.2s ease-in-out'
-            >
-              Contact
-            </Button>
-          </NextLink>
+          <Button
+            as={NextLink}
+            href='/#contact'
+            variant='ghost'
+            size='sm'
+            fontWeight='medium'
+            color={textColor}
+            borderRadius='full'
+            px='4'
+            py='2'
+            fontSize='sm'
+            _hover={{
+              bg: activeBg,
+              color: hoverTextColor,
+              transform: 'translateY(-1px)',
+            }}
+            transition='all 0.2s ease-in-out'
+          >
+            Contact
+          </Button>
 
           {/* Divider */}
           <Box
@@ -322,18 +315,17 @@ export const Header: React.FC = () => {
         border='1px solid'
         borderColor={borderColor}
       >
-        <NextLink href='/' passHref legacyBehavior>
-          <Text
-            as='a'
-            fontWeight='bold'
-            fontSize='lg'
-            bgGradient='linear(135deg, #6366f1 0%, #a855f7 100%)'
-            bgClip='text'
-            color='transparent'
-          >
-            {NAME.split(' ')[0]}
-          </Text>
-        </NextLink>
+        <Text
+          as={NextLink}
+          href='/'
+          fontWeight='bold'
+          fontSize='lg'
+          bgGradient='linear(135deg, #6366f1 0%, #a855f7 100%)'
+          bgClip='text'
+          color='transparent'
+        >
+          {NAME.split(' ')[0]}
+        </Text>
 
         <HStack spacing='2'>
           <IconButton
