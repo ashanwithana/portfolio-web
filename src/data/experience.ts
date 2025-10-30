@@ -17,7 +17,7 @@ export const workExperience: WorkExperience[] = [
     company: 'Saberion',
     position: 'Software Engineer',
     location: 'Hybrid',
-    startDate: '2022-01',
+    startDate: '2022-05',
     endDate: 'Present',
     description: [
       'Lead development of scalable web applications using modern technologies',
@@ -53,9 +53,9 @@ export const formatDateRange = (startDate: string, endDate: string): string => {
     endDate === 'Present'
       ? 'Present'
       : end.toLocaleDateString('en-US', {
-          year: 'numeric',
-          month: 'short',
-        })
+        year: 'numeric',
+        month: 'short',
+      })
 
   return `${startFormatted} - ${endFormatted}`
 }
@@ -79,8 +79,7 @@ export const calculateDuration = (
   } else if (months === 0) {
     return `${years} year${years !== 1 ? 's' : ''}`
   } else {
-    return `${years} year${years !== 1 ? 's' : ''}, ${months} month${
-      months !== 1 ? 's' : ''
-    }`
+    return `${years} year${years !== 1 ? 's' : ''}, ${months} month${months !== 1 ? 's' : ''
+      }`
   }
 }
