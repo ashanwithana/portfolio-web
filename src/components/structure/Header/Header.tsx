@@ -45,16 +45,16 @@ export const Header: React.FC = () => {
   }
 
   return (
-    <Box as='header' pos='fixed' zIndex='banner' top='4' left='0' right='0'>
+    <Box as='header' pos='fixed' zIndex='banner' top={{ base: '9px', md: '13px', xl: '20px', '2xl': '30px' }} left='0' right='0'>
       {/* Desktop Pill Navigation */}
       <Flex justify='center' px='4' display={{ base: 'none', md: 'flex' }}>
         <HStack
           background={pillBg}
           backdropFilter='blur(20px)'
           borderRadius='full'
-          px='6'
-          py='3'
-          spacing='1'
+          px={{ base: '6', xl: '8', '2xl': '10' }}
+          py={{ base: '3', xl: '4', '2xl': '5' }}
+          spacing={{ base: '1', xl: '2', '2xl': '3' }}
           boxShadow='0 8px 32px rgba(99, 102, 241, 0.15), 0 4px 16px rgba(168, 85, 247, 0.1)'
           border='1px solid'
           borderColor={borderColor}
@@ -64,14 +64,14 @@ export const Header: React.FC = () => {
             as={NextLink}
             href='/about'
             variant='ghost'
-            size='sm'
+            size={{ base: 'sm', xl: 'md', '2xl': 'lg' }}
             fontWeight='medium'
             color={isActiveRoute('/about') ? activeTextColor : textColor}
             bg={isActiveRoute('/about') ? activeBg : 'transparent'}
             borderRadius='full'
-            px='4'
-            py='2'
-            fontSize='sm'
+            px={{ base: '4', xl: '6', '2xl': '8' }}
+            py={{ base: '2', xl: '3', '2xl': '4' }}
+            fontSize={{ base: 'sm', xl: 'md', '2xl': 'lg' }}
             _hover={{
               bg: activeBg,
               color: hoverTextColor,
@@ -86,14 +86,14 @@ export const Header: React.FC = () => {
             as={NextLink}
             href='/projects'
             variant='ghost'
-            size='sm'
+            size={{ base: 'sm', xl: 'md', '2xl': 'lg' }}
             fontWeight='medium'
             color={isActiveRoute('/projects') ? activeTextColor : textColor}
             bg={isActiveRoute('/projects') ? activeBg : 'transparent'}
             borderRadius='full'
-            px='4'
-            py='2'
-            fontSize='sm'
+            px={{ base: '4', xl: '6', '2xl': '8' }}
+            py={{ base: '2', xl: '3', '2xl': '4' }}
+            fontSize={{ base: 'sm', xl: 'md', '2xl': 'lg' }}
             _hover={{
               bg: activeBg,
               color: hoverTextColor,
@@ -108,14 +108,14 @@ export const Header: React.FC = () => {
             as={NextLink}
             href='/services'
             variant='ghost'
-            size='sm'
+            size={{ base: 'sm', xl: 'md', '2xl': 'lg' }}
             fontWeight='medium'
             color={isActiveRoute('/services') ? activeTextColor : textColor}
             bg={isActiveRoute('/services') ? activeBg : 'transparent'}
             borderRadius='full'
-            px='4'
-            py='2'
-            fontSize='sm'
+            px={{ base: '4', xl: '6', '2xl': '8' }}
+            py={{ base: '2', xl: '3', '2xl': '4' }}
+            fontSize={{ base: 'sm', xl: 'md', '2xl': 'lg' }}
             _hover={{
               bg: activeBg,
               color: hoverTextColor,
@@ -133,7 +133,7 @@ export const Header: React.FC = () => {
             aria-label='Home'
             icon={<AppIcon iconName='home' strokeWidth={1} />}
             variant='ghost'
-            size='sm'
+            size={{ base: 'sm', xl: 'md', '2xl': 'lg' }}
             color={isActiveRoute('/') ? activeTextColor : textColor}
             bg={isActiveRoute('/') ? activeBg : 'transparent'}
             borderRadius='full'
@@ -310,7 +310,7 @@ export const Header: React.FC = () => {
         backdropFilter='blur(20px)'
         mx='4'
         borderRadius='full'
-        py='3'
+        py={{ base: '2', sm: '3' }}
         boxShadow='0 8px 32px rgba(99, 102, 241, 0.15), 0 4px 16px rgba(168, 85, 247, 0.1)'
         border='1px solid'
         borderColor={borderColor}

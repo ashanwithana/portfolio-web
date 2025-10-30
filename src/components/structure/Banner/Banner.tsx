@@ -17,15 +17,34 @@ const MotionFlex = motion(Flex)
 const MotionHeading = motion(Heading)
 const MotionButton = motion(Button)
 
+// Function to calculate banner height dynamically
+const getBannerHeight = () => {
+  // Navbar heights (top position + pill height + some padding)
+  // Based on Header.tsx: top={4/6/8/10} + pill height (~60px) + gap
+  const navbarSpace = {
+    base: 'calc(100vh - 80px)', // Mobile: top(4) + pill(~60px) + gap(~16px)
+    md: 'calc(100vh - 90px)',   // Medium: top(6) + pill(~66px) + gap(~18px)
+    xl: 'calc(100vh - 160px)',  // Large: top(8) + pill(~72px) + gap(~20px)
+    '2xl': 'calc(100vh - 190px)' // XL: top(10) + pill(~76px) + gap(~24px)
+  }
+  return navbarSpace
+}
+
 export const Banner: React.FC = () => {
   const { t } = useTranslation('common')
   const posthog = usePostHog()
+  const dynamicHeight = getBannerHeight()
 
   return (
     <MotionFlex
-      h='calc(100vh - var(--chakra-sizes-header-height))'
-      px={{ base: '4', md: '8' }}
+      h={dynamicHeight}
+      minH={dynamicHeight}
+      maxH={dynamicHeight}
+      px={{ base: '4', md: '8', xl: '12', '2xl': '16' }}
+      pt={{ base: '80px', md: '90px', xl: '100px', '2xl': '110px' }}
+      pb={{ base: '8', md: '10', xl: '12', '2xl': '16' }}
       align='center'
+      justify='center'
       position='relative'
       overflow='hidden'
       animate={{
@@ -37,11 +56,13 @@ export const Banner: React.FC = () => {
       }}
       transition={{ repeat: Infinity, repeatType: 'reverse', duration: 8 }}
     >
-      <VStack align='flex-start' pb='32' maxW='container.md' spacing='12'>
+      <VStack align='flex-start' maxW={{ base: 'container.md', xl: 'container.lg', '2xl': 'container.xl' }} spacing={{ base: '6', xl: '8', '2xl': '12' }} w='full'>
         <MotionHeading
           as='h1'
           variant='banner'
           size='banner'
+          fontSize={{ base: '4xl', md: '5xl', lg: '6xl', xl: '7xl', '2xl': '8xl' }}
+          lineHeight={{ base: '1.1', xl: '1', '2xl': '0.95' }}
           wordBreak='break-word'
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -53,6 +74,10 @@ export const Banner: React.FC = () => {
           as={NextLink}
           href='/#projects'
           variant='accent'
+          size={{ base: 'lg', xl: 'xl', '2xl': '2xl' }}
+          fontSize={{ base: 'md', xl: 'lg', '2xl': 'xl' }}
+          px={{ base: 6, xl: 8, '2xl': 12 }}
+          py={{ base: 3, xl: 4, '2xl': 6 }}
           sx={{
             '&:hover svg': {
               transform: 'scaleX(1.1)',
