@@ -109,6 +109,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
               />
             </Box>
             <Heading
+              as='h3'
               size={{ base: 'lg', lg: 'md' }}
               color={
                 service.popular
@@ -119,7 +120,8 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
               lineHeight='short'
               noOfLines={2}
               textAlign='center'
-              wordBreak='break-word'
+              overflow='hidden'
+              textOverflow='ellipsis'
             >
               {service.title}
             </Heading>

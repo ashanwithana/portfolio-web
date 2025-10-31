@@ -61,7 +61,9 @@ export const Contribution: React.FC<ContributionProps> = ({
             <Text
               fontWeight='semibold'
               noOfLines={1}
-              wordBreak='break-word'
+              overflow='hidden'
+              textOverflow='ellipsis'
+              whiteSpace='nowrap'
               minW='0'
             >
               <LinkOverlay href={githubUrl} isExternal>

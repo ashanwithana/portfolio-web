@@ -5,11 +5,14 @@ import {
   Link,
   Divider,
   useColorModeValue,
+  Text,
+  VStack,
 } from '@chakra-ui/react'
 import { AnimatePresence, motion } from 'framer-motion'
+import { useEffect } from 'react'
 import { AppIcon } from '@components/icons'
 import { usePostHog } from 'posthog-js/react'
-import { config } from '@config/config'
+import { config, NAME } from '@config/config'
 import { NavItem, type NavItemProps } from './NavItem'
 
 const navItems: Omit<NavItemProps, 'onClose'>[] = [
@@ -39,6 +42,23 @@ export const Menu: React.FC<MenuProps> = ({ isOpen, onClose }) => {
     'rgba(99, 102, 241, 0.15)',
     'rgba(168, 85, 247, 0.25)'
   )
+
+  // Prevent body scroll when menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden'
+      document.body.style.paddingRight = '0px' // Prevent layout shift
+    } else {
+      document.body.style.overflow = 'unset'
+      document.body.style.paddingRight = '0px'
+    }
+
+    // Cleanup on unmount
+    return () => {
+      document.body.style.overflow = 'unset'
+      document.body.style.paddingRight = '0px'
+    }
+  }, [isOpen])
 
   return (
     <AnimatePresence initial={false}>
@@ -74,10 +94,10 @@ export const Menu: React.FC<MenuProps> = ({ isOpen, onClose }) => {
             right='0'
             bottom='0'
             w='80'
-            py='20'
+            py='8'
             px='6'
             direction='column'
-            spacing='4'
+            spacing='6'
             background={bgColor}
             backdropFilter='blur(20px)'
             borderLeft='1px solid'
@@ -90,12 +110,27 @@ export const Menu: React.FC<MenuProps> = ({ isOpen, onClose }) => {
             exit={{ x: '100%' }}
             transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
           >
+            {/* Menu Header */}
+            <VStack spacing='4' pt='6'>
+              <Text
+                fontSize='xl'
+                fontWeight='700'
+                bgGradient='linear(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%)'
+                bgClip='text'
+                color='transparent'
+                textAlign='center'
+              >
+                {NAME}
+              </Text>
+              <Divider />
+            </VStack>
+
             {/* Navigation Items */}
-            <Stack direction={{ base: 'column', md: 'row' }} spacing='2'>
+            <VStack spacing='2' flex='1'>
               {navItems.map((item) => (
                 <NavItem key={item.name} onClose={onClose} {...item} />
               ))}
-            </Stack>
+            </VStack>
 
             {/* Mobile Social Links */}
             <Stack display={{ base: 'block', md: 'none' }}>

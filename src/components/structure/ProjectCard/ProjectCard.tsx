@@ -119,7 +119,9 @@ export const ProjectCard: React.FC<ProcessedRepo> = ({
                 _hover={{ color: 'blue.800' }}
                 transition='color 0.2s'
                 noOfLines={1}
-                wordBreak='break-word'
+                overflow='hidden'
+                textOverflow='ellipsis'
+                whiteSpace='nowrap'
               >
                 {name}
               </Text>
