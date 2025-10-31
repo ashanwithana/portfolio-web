@@ -25,7 +25,7 @@ export const Header: React.FC = () => {
   const { colorMode, toggleColorMode } = useColorMode()
   const [isScrolled, setIsScrolled] = useState(false)
 
-  // Handle scroll effect
+  // Handle scroll effect - keep transparent throughout but add slight enhancement when scrolling
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY
@@ -38,19 +38,19 @@ export const Header: React.FC = () => {
 
   const pillBg = useColorModeValue(
     isScrolled
-      ? 'linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(168, 85, 247, 0.15) 50%, rgba(236, 72, 153, 0.15) 100%), rgba(255, 255, 255, 0.95)'
-      : 'linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(168, 85, 247, 0.05) 50%, rgba(236, 72, 153, 0.05) 100%), rgba(255, 255, 255, 0.6)',
+      ? 'linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(168, 85, 247, 0.08) 50%, rgba(236, 72, 153, 0.08) 100%), rgba(255, 255, 255, 0.4)'
+      : 'linear-gradient(135deg, rgba(99, 102, 241, 0.02) 0%, rgba(168, 85, 247, 0.02) 50%, rgba(236, 72, 153, 0.02) 100%), rgba(255, 255, 255, 0.15)',
     isScrolled
-      ? 'linear-gradient(135deg, rgba(99, 102, 241, 0.25) 0%, rgba(168, 85, 247, 0.25) 50%, rgba(236, 72, 153, 0.25) 100%), rgba(26, 32, 44, 0.95)'
-      : 'linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(168, 85, 247, 0.1) 50%, rgba(236, 72, 153, 0.1) 100%), rgba(26, 32, 44, 0.6)'
+      ? 'linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(168, 85, 247, 0.15) 50%, rgba(236, 72, 153, 0.15) 100%), rgba(26, 32, 44, 0.4)'
+      : 'linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(168, 85, 247, 0.05) 50%, rgba(236, 72, 153, 0.05) 100%), rgba(26, 32, 44, 0.15)'
   )
   const activeBg = useColorModeValue(
     'rgba(99, 102, 241, 0.15)',
     'rgba(168, 85, 247, 0.2)'
   )
   const borderColor = useColorModeValue(
-    isScrolled ? 'rgba(99, 102, 241, 0.3)' : 'rgba(99, 102, 241, 0.1)',
-    isScrolled ? 'rgba(168, 85, 247, 0.4)' : 'rgba(168, 85, 247, 0.15)'
+    isScrolled ? 'rgba(99, 102, 241, 0.15)' : 'rgba(99, 102, 241, 0.03)',
+    isScrolled ? 'rgba(168, 85, 247, 0.2)' : 'rgba(168, 85, 247, 0.05)'
   )
   const textColor = useColorModeValue('gray.700', 'gray.300')
   const activeTextColor = useColorModeValue('black', 'white')
@@ -341,8 +341,8 @@ export const Header: React.FC = () => {
         px='6'
         py='4'
         bg={useColorModeValue(
-          isScrolled ? 'rgba(255, 255, 255, 0.95)' : 'rgba(255, 255, 255, 0.2)',
-          isScrolled ? 'rgba(26, 32, 44, 0.95)' : 'rgba(26, 32, 44, 0.2)'
+          isScrolled ? 'rgba(255, 255, 255, 0.4)' : 'rgba(255, 255, 255, 0.15)',
+          isScrolled ? 'rgba(26, 32, 44, 0.4)' : 'rgba(26, 32, 44, 0.15)'
         )}
         backdropFilter={isScrolled ? 'blur(20px)' : 'blur(16px)'}
         borderBottom={isScrolled ? '1px solid' : 'none'}
