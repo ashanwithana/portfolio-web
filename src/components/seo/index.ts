@@ -5,3 +5,4 @@ export {
   BreadcrumbSchema,
 } from './StructuredData'
 export { HomepageSEO } from './HomepageSEO'
+export { BlogPostSEO } from './BlogPostSEO'

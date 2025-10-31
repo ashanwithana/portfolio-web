@@ -20,6 +20,7 @@ import {
   getPostBySlug,
 } from '@data/blog'
 import { MainLayout } from '@components/layouts/MainLayout'
+import { BlogPostSEO } from '@components/seo'
 import { config } from '@config/config'
 import ReactMarkdown from 'react-markdown'
 
@@ -40,17 +41,7 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post }) => {
 
   return (
     <MainLayout>
-      {/* <NextSeo
-        title={post.title}
-        description={post.excerpt}
-        openGraph={{
-          title: post.title,
-          description: post.excerpt,
-          images: post.coverImage
-            ? [{ url: post.coverImage, alt: post.title }]
-            : [],
-        }}
-      /> */}
+      <BlogPostSEO post={post} />
       <Container maxW='4xl' py='8'>
         <VStack spacing='8' align='stretch'>
           {/* Header */}

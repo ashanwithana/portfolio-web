@@ -8,9 +8,78 @@ export interface BlogPost {
   tags: string[]
   readingTime: number
   slug: string
+  seo?: {
+    metaDescription?: string
+    keywords?: string[]
+    canonicalUrl?: string
+    ogImage?: string
+    schema?: {
+      articleType?: 'BlogPosting' | 'TechnicalArticle' | 'Tutorial' | 'NewsArticle'
+      category?: string
+      wordCount?: number
+    }
+  }
 }
 
 export const blogPosts: BlogPost[] = [
+  // TEMPLATE: Copy this template to create new blog posts
+  // {
+  //   id: 'unique-id', // Use a unique identifier
+  //   title: 'Your Blog Post Title Here', // SEO-friendly title (under 60 chars)
+  //   excerpt: 'A compelling 150-160 character description that will appear in search results and social media previews.',
+  //   content: `
+  // # Your Blog Post Title Here
+
+  // ## Introduction
+  // Start with a hook that grabs attention and introduces the topic.
+
+  // ## Main Content Sections
+  // Break your content into digestible sections with H2 and H3 headings.
+
+  // ### Code Examples (if applicable)
+  // \`\`\`javascript
+  // // Always include language for syntax highlighting
+  // const example = "Clear, working code examples";
+  // console.log(example);
+  // \`\`\`
+
+  // ### Lists and Bullet Points
+  // - Make content scannable
+  // - Use bullet points for key information
+  // - Keep points concise and actionable
+
+  // ## Best Practices Tips
+  // 1. **Bold important terms** on first mention
+  // 2. Use *italics* for emphasis
+  // 3. Include [relevant links](https://example.com) to resources
+  // 4. Add > blockquotes for important notes
+
+  // > 💡 **Pro Tip**: Include practical tips that readers can immediately apply
+
+  // ## Conclusion
+  // Summarize key takeaways and encourage engagement
+  //   `,
+  //   coverImage: '/img/blog/your-cover-image.jpg', // 1200x630px recommended
+  //   publishedAt: '2025-10-31', // Format: YYYY-MM-DD
+  //   tags: ['Technology', 'Tutorial', 'YourTag'], // 3-5 relevant tags
+  //   readingTime: 5, // Estimated minutes (250 words per minute)
+  //   slug: 'your-seo-friendly-url-slug', // lowercase, hyphens, no spaces
+  //   // SEO Properties (will be added to individual post pages)
+  //   seo: {
+  //     metaDescription: 'Same as excerpt but optimized for search engines',
+  //     keywords: ['primary keyword', 'secondary keyword', 'related terms'],
+  //     canonicalUrl: 'https://ashanwithana.com/blog/your-seo-friendly-url-slug',
+  //     ogImage: '/img/blog/your-cover-image.jpg',
+  //     schema: {
+  //       articleType: 'TechnicalArticle', // or 'BlogPosting', 'Tutorial'
+  //       category: 'Technology', // Main category
+  //       wordCount: 1200, // Approximate word count
+  //     }
+  //   }
+  // },
+
+  // Uncomment and customize blog posts below when ready to publish:
+  /*
   {
     id: '1',
     title: 'Building Scalable Web Applications with Laravel',
@@ -152,6 +221,7 @@ This combination provides both type safety and excellent performance characteris
     readingTime: 7,
     slug: 'building-modern-uis-with-nextjs-and-typescript',
   },
+  */
 ]
 
 export const getAllTags = (): string[] => {

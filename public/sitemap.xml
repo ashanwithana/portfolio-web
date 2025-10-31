@@ -54,33 +54,14 @@
     <priority>0.8</priority>
   </url>
   
-  <!-- Blog Posts -->
+  <!-- Blog Posts will be added here when published -->
+  <!-- Template for new blog posts:
   <url>
-    <loc>https://ashanwithana.com/blog/building-scalable-web-applications-with-laravel/</loc>
+    <loc>https://ashanwithana.com/blog/your-blog-post-slug/</loc>
     <lastmod>2025-10-31T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-  
-  <url>
-    <loc>https://ashanwithana.com/blog/modern-python-development-with-fastapi/</loc>
-    <lastmod>2025-10-31T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ashanwithana.com/blog/mastering-dotnet-core-for-enterprise-applications/</loc>
-    <lastmod>2025-10-31T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ashanwithana.com/blog/building-modern-uis-with-nextjs-and-typescript/</loc>
-    <lastmod>2025-10-31T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
+  -->
   
 </urlset>
