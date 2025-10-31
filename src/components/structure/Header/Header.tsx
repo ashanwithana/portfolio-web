@@ -300,34 +300,73 @@ export const Header: React.FC = () => {
         </HStack>
       </Flex>
 
-      {/* Mobile Navigation */}
+      {/* Modern Mobile Navigation */}
       <Flex
         justify='space-between'
         align='center'
-        px='4'
+        px='6'
         display={{ base: 'flex', md: 'none' }}
-        background={pillBg}
-        backdropFilter='blur(20px)'
         mx='4'
-        borderRadius='full'
-        py={{ base: '2', sm: '3' }}
-        boxShadow='0 8px 32px rgba(99, 102, 241, 0.15), 0 4px 16px rgba(168, 85, 247, 0.1)'
-        border='1px solid'
-        borderColor={borderColor}
+        position='relative'
+        _before={{
+          content: '""',
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(168, 85, 247, 0.08) 50%, rgba(236, 72, 153, 0.08) 100%)',
+          backdropFilter: 'blur(25px)',
+          borderRadius: '20px',
+          border: '1px solid',
+          borderColor: useColorModeValue('rgba(255, 255, 255, 0.2)', 'rgba(255, 255, 255, 0.1)'),
+          boxShadow: '0 8px 32px rgba(99, 102, 241, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
+          zIndex: -1,
+        }}
+        py='4'
+        minH='16'
+        overflow='hidden'
       >
-        <Text
-          as={NextLink}
-          href='/'
-          fontWeight='bold'
-          fontSize='lg'
-          bgGradient='linear(135deg, #6366f1 0%, #a855f7 100%)'
-          bgClip='text'
-          color='transparent'
-        >
-          {NAME.split(' ')[0]}
-        </Text>
+        {/* Logo with modern styling */}
+        <Box position='relative'>
+          <Text
+            as={NextLink}
+            href='/'
+            fontWeight='800'
+            fontSize='xl'
+            bgGradient='linear(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%)'
+            bgClip='text'
+            color='transparent'
+            position='relative'
+            _before={{
+              content: '""',
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              background: 'linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%)',
+              borderRadius: '8px',
+              opacity: 0.1,
+              transform: 'scale(1.2)',
+              filter: 'blur(8px)',
+              zIndex: -1,
+            }}
+            transition='all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+            _hover={{
+              transform: 'translateY(-1px)',
+              _before: {
+                opacity: 0.2,
+                transform: 'scale(1.3)',
+              }
+            }}
+          >
+            {NAME.split(' ')[0]}
+          </Text>
+        </Box>
 
-        <HStack spacing='2'>
+        {/* Right side controls with modern floating design */}
+        <HStack spacing='3'>
           <IconButton
             aria-label={
               colorMode === 'light'
@@ -338,18 +377,28 @@ export const Header: React.FC = () => {
               <AppIcon
                 iconName={colorMode === 'light' ? 'darkMode' : 'lightMode'}
                 strokeWidth={2.5}
+                boxSize={5}
               />
             }
             variant='ghost'
-            size='sm'
-            borderRadius='full'
+            size='md'
+            borderRadius='12px'
             color={textColor}
+            background='rgba(255, 255, 255, 0.05)'
+            backdropFilter='blur(10px)'
+            border='1px solid'
+            borderColor={useColorModeValue('rgba(255, 255, 255, 0.1)', 'rgba(255, 255, 255, 0.05)')}
             _hover={{
-              bg: 'linear-gradient(135deg, #6366f1 0%, #a855f7 100%)',
+              background: 'linear-gradient(135deg, #6366f1 0%, #a855f7 100%)',
               color: 'white',
-              transform: 'scale(1.05)',
+              transform: 'translateY(-2px) scale(1.05)',
+              borderColor: 'transparent',
+              boxShadow: '0 8px 25px rgba(99, 102, 241, 0.3)',
             }}
-            transition='all 0.2s ease-in-out'
+            _active={{
+              transform: 'translateY(0) scale(0.98)',
+            }}
+            transition='all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
             onClick={() => {
               toggleColorMode()
               posthog.capture('color_mode_toggled', {
@@ -362,18 +411,32 @@ export const Header: React.FC = () => {
           <IconButton
             aria-label={isOpen ? 'Close menu' : 'Open menu'}
             icon={
-              <AppIcon iconName={isOpen ? 'close' : 'menu'} strokeWidth={2.5} />
+              <AppIcon
+                iconName={isOpen ? 'close' : 'menu'}
+                strokeWidth={2.5}
+                boxSize={5}
+              />
             }
             variant='ghost'
-            size='sm'
-            borderRadius='full'
-            color={textColor}
+            size='md'
+            borderRadius='12px'
+            color={isOpen ? 'white' : textColor}
+            background={isOpen ? 'linear-gradient(135deg, #6366f1 0%, #a855f7 100%)' : 'rgba(255, 255, 255, 0.05)'}
+            backdropFilter='blur(10px)'
+            border='1px solid'
+            borderColor={isOpen ? 'transparent' : useColorModeValue('rgba(255, 255, 255, 0.1)', 'rgba(255, 255, 255, 0.05)')}
+            boxShadow={isOpen ? '0 8px 25px rgba(99, 102, 241, 0.3)' : 'none'}
             _hover={{
-              bg: 'linear-gradient(135deg, #6366f1 0%, #a855f7 100%)',
+              background: 'linear-gradient(135deg, #6366f1 0%, #a855f7 100%)',
               color: 'white',
-              transform: 'scale(1.05)',
+              transform: 'translateY(-2px) scale(1.05)',
+              borderColor: 'transparent',
+              boxShadow: '0 8px 25px rgba(99, 102, 241, 0.3)',
             }}
-            transition='all 0.2s ease-in-out'
+            _active={{
+              transform: 'translateY(0) scale(0.98)',
+            }}
+            transition='all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
             onClick={onToggle}
           />
         </HStack>
