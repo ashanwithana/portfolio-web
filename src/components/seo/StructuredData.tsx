@@ -14,7 +14,7 @@ export const PersonSchema: React.FC<PersonSchemaProps> = ({
     jobTitle: 'Software Engineer & Backend Developer',
     description:
       'Experienced Software Engineer specializing in Laravel, .NET, and Python. Building scalable backend systems and innovative solutions for modern applications.',
-    url: 'https://ashanwithana.dev',
+    url: 'https://ashanwithana.com/',
     sameAs: [
       'https://github.com/ashanwithana',
       'https://www.linkedin.com/in/ashanwithana',
@@ -75,7 +75,7 @@ export const PersonSchema: React.FC<PersonSchemaProps> = ({
     name: 'Ashan Withana - Software Development Services',
     description:
       'Professional software development services including backend development, full-stack solutions, and technical consulting.',
-    url: 'https://ashanwithana.dev/services',
+    url: 'https://ashanwithana.com/services',
     provider: {
       '@type': 'Person',
       name: 'Ashan Withana',
@@ -106,7 +106,7 @@ export const PersonSchema: React.FC<PersonSchemaProps> = ({
     name: 'Ashan Withana Portfolio',
     description:
       'Portfolio website of Ashan Withana, Software Engineer specializing in backend development and full-stack solutions.',
-    url: 'https://ashanwithana.dev',
+    url: 'https://ashanwithana.com/',
     author: {
       '@type': 'Person',
       name: 'Ashan Withana',
@@ -164,13 +164,13 @@ export const ServiceSchema: React.FC<ServiceSchemaProps> = ({ service }) => {
     provider: {
       '@type': 'Person',
       name: 'Ashan Withana',
-      url: 'https://ashanwithana.dev',
+      url: 'https://ashanwithana.com/',
     },
     serviceType: service.title,
     areaServed: 'Worldwide',
     availableChannel: {
       '@type': 'ServiceChannel',
-      serviceUrl: 'https://ashanwithana.dev/services',
+      serviceUrl: 'https://ashanwithana.com/services',
       serviceSmsNumber: '+94 71 1722 653',
       servicePhone: '+94 71 1722 653',
     },
@@ -220,7 +220,7 @@ export const ProjectSchema: React.FC<ProjectSchemaProps> = ({ project }) => {
     author: {
       '@type': 'Person',
       name: 'Ashan Withana',
-      url: 'https://ashanwithana.dev',
+      url: 'https://ashanwithana.com/',
     },
     programmingLanguage: project.technologies,
     dateCreated: project.dateCreated,

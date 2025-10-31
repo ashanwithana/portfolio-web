@@ -12,18 +12,18 @@ export const config: Config = {
     title: `${NAME} | Software Engineer & Backend Developer`,
     description:
       'Experienced Software Engineer specializing in Laravel, .NET, and Python. Building scalable backend systems and innovative solutions for modern applications.',
-    canonical: 'https://ashanwithana.dev',
+    canonical: 'https://ashanwithana.com/',
     openGraph: {
       type: 'website',
       locale: 'en_US',
-      url: 'https://ashanwithana.dev',
+      url: 'https://ashanwithana.com/',
       title: `${NAME} | Software Engineer & Backend Developer`,
       description:
         'Experienced Software Engineer specializing in Laravel, .NET, and Python. Building scalable backend systems and innovative solutions for modern applications.',
       site_name: `${NAME} | Software Engineer & Backend Developer`,
       images: [
         {
-          url: 'https://ashanwithana.dev/img/og-image.png',
+          url: 'https://ashanwithana.com/img/og-image.png',
           width: 1200,
           height: 630,
           alt: 'Ashan Withana - Software Engineer & Backend Developer',
@@ -34,7 +34,7 @@ export const config: Config = {
       cardType: 'summary_large_image',
       site: '@ashanwithana',
     },
-    languageAlternates: [{ hrefLang: 'en', href: 'https://ashanwithana.dev' }],
+    languageAlternates: [{ hrefLang: 'en', href: 'https://ashanwithana.com/' }],
     additionalMetaTags: [
       { httpEquiv: 'x-ua-compatible', content: 'IE=edge; chrome=1' },
       { property: 'msapplication-TileColor', content: '#2D3748' },

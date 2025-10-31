@@ -4,3 +4,4 @@ export {
   ProjectSchema,
   BreadcrumbSchema,
 } from './StructuredData'
+export { HomepageSEO } from './HomepageSEO'

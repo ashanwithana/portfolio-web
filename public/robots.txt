@@ -1,0 +1,26 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://ashanwithana.com/sitemap.xml
+
+# Block access to admin/private areas if any
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# Allow specific bot access to static assets
+User-agent: Googlebot
+Allow: /
+Allow: /img/
+Allow: /icons/
+Allow: /fonts/
+
+User-agent: Bingbot
+Allow: /
+Allow: /img/
+Allow: /icons/
+Allow: /fonts/
+
+# Crawl delay for courtesy
+Crawl-delay: 1
