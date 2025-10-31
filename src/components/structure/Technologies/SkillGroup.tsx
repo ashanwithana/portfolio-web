@@ -62,11 +62,13 @@ export const SkillGroup: React.FC<SkillGroupProps> = ({ category, skills }) => {
         <VStack align='stretch' spacing='4' height='full'>
           <Heading
             as='h4'
-            size='md'
-            fontWeight='semibold'
+            fontFamily='Gilroy, sans-serif'
+            fontWeight='800'
+            fontSize={{ base: 'md', md: 'lg', lg: 'xl', xl: '2xl' }}
             color={useColorModeValue('black', 'white')}
             textTransform='capitalize'
-            letterSpacing='tight'
+            letterSpacing='-0.02em'
+            lineHeight='shorter'
             mb='2'
           >
             {category}

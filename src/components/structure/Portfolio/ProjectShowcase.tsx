@@ -39,7 +39,16 @@ export const ProjectShowcase: React.FC<Project> = ({
       overflow='hidden'
     >
       <VStack flex='2' py='4' align='flex-start' justify='center' spacing='4'>
-        <Heading as='h3'>{title}</Heading>
+        <Heading
+          as='h3'
+          fontFamily='Gilroy, sans-serif'
+          fontWeight='800'
+          fontSize={{ base: 'xl', md: '2xl', lg: '3xl', xl: '4xl' }}
+          letterSpacing='-0.02em'
+          lineHeight='shorter'
+        >
+          {title}
+        </Heading>
         <Divider opacity='1' />
         <Text>{description.en}</Text>
         <HStack spacing='4'>

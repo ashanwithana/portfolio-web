@@ -10,6 +10,14 @@ export const Fonts: React.FC = () => (
         font-display: swap;
         src: url('/fonts/hanson-bold.ttf') format('truetype');
       }
+      
+      @font-face {
+        font-family: 'Gilroy';
+        font-style: normal;
+        font-weight: 800;
+        font-display: swap;
+        src: url('/fonts/Gilroy-ExtraBold.otf') format('opentype');
+      }
     `}
   />
 )

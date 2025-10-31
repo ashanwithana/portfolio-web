@@ -43,6 +43,11 @@ export const theme = extendTheme({
       html: {
         // scrollBehavior: 'smooth',
       },
+      body: {
+        fontWeight: '400', // Regular weight - will fallback to system fonts for readability
+        letterSpacing: '-0.01em', // Slightly tighter spacing
+        lineHeight: '1.6', // Good readability
+      },
       '::selection': {
         background: 'accent.200',
         color: 'primary.800',
@@ -50,8 +55,8 @@ export const theme = extendTheme({
     },
   },
   fonts: {
-    heading: 'Hanson, sans-serif',
-    body: 'Manrope Variable, sans-serif',
+    heading: 'Hanson, Gilroy, sans-serif',
+    body: 'Gilroy, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
   },
   shadows: {
     gray: '0 0 1px 2px rgba(75, 85, 99, .75)',
