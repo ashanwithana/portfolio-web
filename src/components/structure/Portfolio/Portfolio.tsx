@@ -45,7 +45,7 @@ export const Portfolio: React.FC = () => {
           maxW={{ base: 'container.md', xl: 'container.lg', '2xl': 'container.xl' }}
           w='full'
         >
-          Selected{'\n'}Projects
+          Selected Projects
         </Heading>
         <MotionVStack
           align='stretch'

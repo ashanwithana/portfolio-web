@@ -19,7 +19,7 @@ export const BlogPostSEO: React.FC<BlogPostSEOProps> = ({ post }) => {
     } = post
 
     // SEO optimized values
-    const pageTitle = `${title} | ${NAME} Blog`
+    const pageTitle = `${title} | ${NAME}`
     const metaDescription = seo?.metaDescription || excerpt
     const canonicalUrl = seo?.canonicalUrl || `https://ashanwithana.com/blog/${slug}/`
     const ogImage = seo?.ogImage || coverImage || 'https://ashanwithana.com/img/og-image.png'

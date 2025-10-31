@@ -50,7 +50,7 @@ export const SelectedProjects: React.FC = () => {
             variant='sectionTitle'
             color='white'
           >
-            Selected{'\n'}Projects
+            Selected Projects
           </Heading>
         </Box>
         <MotionVStack

@@ -226,17 +226,8 @@ export const Services: React.FC = () => {
     >
       <Container maxW='7xl'>
         <VStack spacing={{ base: 8, md: 12 }} align='stretch'>
-          {/* Header Section */}
-          <VStack spacing={6} textAlign='center' py={8}>
-            <Heading
-              as='h1'
-              variant='sectionTitle'
-              whiteSpace='nowrap'
-              textOverflow='ellipsis'
-              overflow='hidden'
-            >
-              Services
-            </Heading>
+          {/* Description Section */}
+          <VStack spacing={6} textAlign='center' py={4}>
             <Text
               fontSize='xl'
               color={useColorModeValue('gray.600', 'gray.300')}
@@ -244,7 +235,7 @@ export const Services: React.FC = () => {
               lineHeight='tall'
             >
               Transform your ideas into robust, scalable solutions with my
-              comprehensive development services. From backend architecture to
+              comprehensive development expertise. From backend architecture to
               full-stack applications, I deliver quality code that drives
               results.
             </Text>

@@ -131,12 +131,12 @@ export const Header: React.FC = () => {
 
           <Button
             as={NextLink}
-            href='/services'
+            href='/expertise'
             variant='ghost'
             size={{ base: 'sm', xl: 'md', '2xl': 'lg' }}
             fontWeight='medium'
-            color={isActiveRoute('/services') ? activeTextColor : textColor}
-            bg={isActiveRoute('/services') ? activeBg : 'transparent'}
+            color={isActiveRoute('/expertise') ? activeTextColor : textColor}
+            bg={isActiveRoute('/expertise') ? activeBg : 'transparent'}
             borderRadius='full'
             px={{ base: '4', xl: '6', '2xl': '8' }}
             py={{ base: '2', xl: '3', '2xl': '4' }}
@@ -149,7 +149,7 @@ export const Header: React.FC = () => {
             }}
             transition='all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
           >
-            Services
+            Expertise
           </Button>
 
           {/* Home Icon - Center */}

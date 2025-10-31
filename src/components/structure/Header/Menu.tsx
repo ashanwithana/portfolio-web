@@ -19,7 +19,7 @@ const navItems: Omit<NavItemProps, 'onClose'>[] = [
   { name: 'Home', href: '/' },
   { name: 'About', href: '/about' },
   { name: 'Projects', href: '/projects' },
-  { name: 'Services', href: '/services' },
+  { name: 'Expertise', href: '/expertise' },
   { name: 'Contributions', href: '/contributions' },
   { name: 'Blog', href: '/blog' },
   { name: 'Contact', href: '/#contact' },

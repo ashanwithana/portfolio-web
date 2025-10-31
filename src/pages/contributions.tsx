@@ -1,13 +1,13 @@
 import { GetStaticProps } from 'next'
 
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import { Box, Container, Heading, SimpleGrid, VStack } from '@chakra-ui/react'
+import { Box, Container, Heading, SimpleGrid, VStack, Text, useColorModeValue } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 import { allContributions } from '@data/contributions'
 import { Contribution } from '../components/structure/Contributions/Contribution'
 import { PersonSchema, BreadcrumbSchema } from '@components/seo'
 import { MainLayout } from '../components/layouts/MainLayout'
-// import { NextSeo } from 'next-seo'
+import Head from 'next/head'
 
 const MotionSimpleGrid = motion(SimpleGrid)
 const MotionBox = motion(Box)
@@ -44,26 +44,42 @@ const ContributionsPage: React.FC = () => {
           },
         ]}
       />
-      {/* <NextSeo
-        title='All Contributions | Ashan Withana'
-        description='Explore all my professional projects and contributions across various technologies and domains.'
-      /> */}
+      <Head>
+        <title>All Contributions | Ashan Withana</title>
+        <meta name="description" content="Explore all my professional projects and contributions across various technologies and domains." />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="canonical" href="https://ashanwithana.com/contributions" />
+      </Head>
       <MainLayout>
-        <Container maxW='7xl' py={8}>
-          <VStack spacing={8} align='stretch'>
-            {/* Header */}
-            <VStack spacing={4} align='stretch'>
-              <Box
-                px={{ base: '4', md: '8' }}
-                pt='16'
-                pb='3'
-                bg='linear-gradient(90deg, #93A5CF 0%, #E4EFE9 100%)'
-                borderRadius='none'
+        {/* Header */}
+        <VStack spacing={4} align='stretch'>
+          <Box
+            px={{ base: '4', md: '8' }}
+            pt='16'
+            pb='3'
+            bg='linear-gradient(90deg, #93A5CF 0%, #E4EFE9 100%)'
+            borderRadius='none'
+          >
+            <Heading as='h1' color='white' size='2xl' textAlign='center'>
+              All Contributions
+            </Heading>
+          </Box>
+        </VStack>
+
+        <Container maxW='7xl' py={4}>
+          <VStack spacing={6} align='stretch'>
+            {/* Description Section */}
+            <VStack spacing={6} textAlign='center' py={4}>
+              <Text
+                fontSize='xl'
+                color={useColorModeValue('gray.600', 'gray.300')}
+                maxW='3xl'
+                lineHeight='tall'
               >
-                <Heading as='h1' color='white' size='2xl' textAlign='center'>
-                  All Contributions
-                </Heading>
-              </Box>
+                Explore all my professional projects and contributions across various
+                technologies and domains. A showcase of collaborative work and
+                open-source contributions.
+              </Text>
             </VStack>
 
             {/* Projects Grid */}

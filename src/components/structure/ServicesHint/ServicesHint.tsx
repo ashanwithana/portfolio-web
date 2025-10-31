@@ -19,7 +19,7 @@ export const ServicesHint: React.FC = () => {
   const sectionBorderColor = useColorModeValue('black', 'gray.600')
 
   const handleSectionClick = () => {
-    router.push('/services')
+    router.push('/expertise')
   }
 
   return (

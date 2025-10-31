@@ -19,6 +19,7 @@ import { AppIcon } from '../components/icons/IconMap'
 import { PersonSchema, BreadcrumbSchema } from '@components/seo'
 import { MainLayout } from '@components/layouts/MainLayout'
 import { config } from '@config/config'
+import Head from 'next/head'
 import {
   workExperience,
   formatDateRange,
@@ -76,28 +77,16 @@ export default function AboutPage() {
           { name: 'About', url: 'https://ashanwithana.dev/about' },
         ]}
       />
-      {/* <NextSeo
-        title='About Me - Ashan Withana | Software Developer'
-        description="Learn more about Ashan Withana's background, education qualifications, and professional journey in software development. University of Moratuwa graduate specializing in full-stack development."
-        canonical='https://ashanwithana.dev/about'
-        openGraph={{
-          title: 'About Me - Ashan Withana',
-          description:
-            'Software developer passionate about crafting innovative solutions with modern technologies. University of Moratuwa graduate with expertise in full-stack development.',
-          url: 'https://ashanwithana.dev/about',
-          type: 'profile',
-          profile: {
-            firstName: 'Ashan',
-            lastName: 'Withana',
-            username: 'ashanwithana',
-            gender: 'male',
-          },
-        }}
-      /> */}
+      <Head>
+        <title>About | Ashan Withana</title>
+        <meta name="description" content="Learn more about Ashan Withana's background, education qualifications, and professional journey in software development. University of Moratuwa graduate specializing in full-stack development." />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="canonical" href="https://ashanwithana.com/about" />
+      </Head>
       <MainLayout>
-        <Container maxW='6xl' py={{ base: 8, md: 16 }}>
+        <Container maxW='6xl' pt={{ base: '80px', md: '90px', xl: '100px', '2xl': '110px' }} pb={{ base: 8, md: 16 }}>
           <VStack spacing={{ base: 8, md: 12 }} align='stretch'>
-            {/* Header Section */}
+            {/* Content Section */}
             <VStack spacing={6} textAlign='center'>
               <Box
                 position='relative'

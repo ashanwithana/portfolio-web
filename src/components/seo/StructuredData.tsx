@@ -72,10 +72,10 @@ export const PersonSchema: React.FC<PersonSchemaProps> = ({
   const organizationSchema = {
     '@context': 'https://schema.org',
     '@type': 'ProfessionalService',
-    name: 'Ashan Withana - Software Development Services',
+    name: 'Ashan Withana - Software Development Expertise',
     description:
-      'Professional software development services including backend development, full-stack solutions, and technical consulting.',
-    url: 'https://ashanwithana.com/services',
+      'Professional software development expertise including backend development, full-stack solutions, and technical consulting.',
+    url: 'https://ashanwithana.com/expertise',
     provider: {
       '@type': 'Person',
       name: 'Ashan Withana',
@@ -170,7 +170,7 @@ export const ServiceSchema: React.FC<ServiceSchemaProps> = ({ service }) => {
     areaServed: 'Worldwide',
     availableChannel: {
       '@type': 'ServiceChannel',
-      serviceUrl: 'https://ashanwithana.com/services',
+      serviceUrl: 'https://ashanwithana.com/expertise',
       serviceSmsNumber: '+94 71 1722 653',
       servicePhone: '+94 71 1722 653',
     },

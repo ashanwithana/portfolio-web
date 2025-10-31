@@ -46,7 +46,7 @@ export const Technologies: React.FC = () => {
           variant='sectionTitle'
           color='white'
         >
-          Technical{'\n'}Expertise
+          Technical Expertise
         </Heading>
       </Box>
 
