@@ -58,7 +58,7 @@ export const ProjectCard: React.FC<ProcessedRepo> = ({
       borderColor={borderColor}
       borderRadius='none'
       p={{ base: '5', md: '6' }}
-      shadow='sm'
+      shadow={`8px 8px 0px 0px ${getLanguageColor(language)}`}
       position='relative'
       overflow='hidden'
       opacity={isArchived ? 0.7 : 1}
@@ -66,12 +66,15 @@ export const ProjectCard: React.FC<ProcessedRepo> = ({
       display='flex'
       flexDirection='column'
       whileHover={{
-        y: -4,
-        boxShadow: '0 10px 25px rgba(0, 0, 0, 0.1)',
+        y: -6,
+        scale: 1.01,
+        boxShadow: '0 20px 40px rgba(0, 0, 0, 0.12)',
       }}
-      transition={{ duration: 0.2 }}
+      transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
       _hover={{
         borderColor: 'blue.300',
+        shadow: 'none',
+        transform: 'translate(8px, 8px)',
       }}
     >
       {/* Archive/Fork badges */}
