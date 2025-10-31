@@ -1,5 +1,6 @@
 import NextLink from 'next/link'
 import { useRouter } from 'next/router'
+import { useEffect, useState } from 'react'
 import {
   Box,
   Button,
@@ -22,18 +23,34 @@ export const Header: React.FC = () => {
   const posthog = usePostHog()
   const router = useRouter()
   const { colorMode, toggleColorMode } = useColorMode()
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  // Handle scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY
+      setIsScrolled(scrollTop > 50)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   const pillBg = useColorModeValue(
-    'linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(168, 85, 247, 0.1) 50%, rgba(236, 72, 153, 0.1) 100%), rgba(255, 255, 255, 0.9)',
-    'linear-gradient(135deg, rgba(99, 102, 241, 0.2) 0%, rgba(168, 85, 247, 0.2) 50%, rgba(236, 72, 153, 0.2) 100%), rgba(26, 32, 44, 0.9)'
+    isScrolled
+      ? 'linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(168, 85, 247, 0.15) 50%, rgba(236, 72, 153, 0.15) 100%), rgba(255, 255, 255, 0.95)'
+      : 'linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(168, 85, 247, 0.05) 50%, rgba(236, 72, 153, 0.05) 100%), rgba(255, 255, 255, 0.6)',
+    isScrolled
+      ? 'linear-gradient(135deg, rgba(99, 102, 241, 0.25) 0%, rgba(168, 85, 247, 0.25) 50%, rgba(236, 72, 153, 0.25) 100%), rgba(26, 32, 44, 0.95)'
+      : 'linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(168, 85, 247, 0.1) 50%, rgba(236, 72, 153, 0.1) 100%), rgba(26, 32, 44, 0.6)'
   )
   const activeBg = useColorModeValue(
     'rgba(99, 102, 241, 0.15)',
     'rgba(168, 85, 247, 0.2)'
   )
   const borderColor = useColorModeValue(
-    'rgba(99, 102, 241, 0.2)',
-    'rgba(168, 85, 247, 0.3)'
+    isScrolled ? 'rgba(99, 102, 241, 0.3)' : 'rgba(99, 102, 241, 0.1)',
+    isScrolled ? 'rgba(168, 85, 247, 0.4)' : 'rgba(168, 85, 247, 0.15)'
   )
   const textColor = useColorModeValue('gray.700', 'gray.300')
   const activeTextColor = useColorModeValue('black', 'white')
@@ -45,19 +62,25 @@ export const Header: React.FC = () => {
   }
 
   return (
-    <Box as='header' pos='fixed' zIndex='banner' top={{ base: '9px', md: '13px', xl: '20px', '2xl': '30px' }} left='0' right='0'>
+    <Box as='header' pos='fixed' zIndex='banner' top={{ base: '0', md: '13px', xl: '20px', '2xl': '30px' }} left='0' right='0'>
       {/* Desktop Pill Navigation */}
       <Flex justify='center' px='4' display={{ base: 'none', md: 'flex' }}>
         <HStack
           background={pillBg}
-          backdropFilter='blur(20px)'
+          backdropFilter={isScrolled ? 'blur(24px)' : 'blur(20px)'}
           borderRadius='full'
           px={{ base: '6', xl: '8', '2xl': '10' }}
           py={{ base: '3', xl: '4', '2xl': '5' }}
           spacing={{ base: '1', xl: '2', '2xl': '3' }}
-          boxShadow='0 8px 32px rgba(99, 102, 241, 0.15), 0 4px 16px rgba(168, 85, 247, 0.1)'
+          boxShadow={
+            isScrolled
+              ? '0 12px 40px rgba(99, 102, 241, 0.25), 0 8px 24px rgba(168, 85, 247, 0.15), 0 4px 12px rgba(0, 0, 0, 0.1)'
+              : '0 4px 16px rgba(99, 102, 241, 0.08), 0 2px 8px rgba(168, 85, 247, 0.05)'
+          }
           border='1px solid'
           borderColor={borderColor}
+          transform={isScrolled ? 'translateY(2px)' : 'translateY(0px)'}
+          transition='all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
         >
           {/* Navigation Links - Left side */}
           <Button
@@ -317,6 +340,22 @@ export const Header: React.FC = () => {
         display={{ base: 'flex', md: 'none' }}
         px='6'
         py='4'
+        bg={useColorModeValue(
+          isScrolled ? 'rgba(255, 255, 255, 0.95)' : 'rgba(255, 255, 255, 0.2)',
+          isScrolled ? 'rgba(26, 32, 44, 0.95)' : 'rgba(26, 32, 44, 0.2)'
+        )}
+        backdropFilter={isScrolled ? 'blur(20px)' : 'blur(16px)'}
+        borderBottom={isScrolled ? '1px solid' : 'none'}
+        borderColor={useColorModeValue(
+          'rgba(0, 0, 0, 0.08)',
+          'rgba(255, 255, 255, 0.08)'
+        )}
+        boxShadow={
+          isScrolled
+            ? '0 4px 20px rgba(0, 0, 0, 0.08)'
+            : '0 2px 8px rgba(0, 0, 0, 0.02)'
+        }
+        transition='all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
       >
         {/* Simple Logo */}
         <Text
