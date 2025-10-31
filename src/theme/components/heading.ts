@@ -15,6 +15,11 @@ export const Heading: ComponentSingleStyleConfig = {
     sectionTitle: {
       fontWeight: 'bold',
       textTransform: 'uppercase',
+      fontSize: { base: '2xl', md: '3xl', lg: '4xl', xl: '5xl' },
+      lineHeight: 1.0,
+      textAlign: { base: 'center', md: 'left' },
+      whiteSpace: 'pre-line',
+      wordBreak: 'break-word',
       _light: {
         color: '#383434',
       },
@@ -35,12 +40,24 @@ export const Heading: ComponentSingleStyleConfig = {
   },
   sizes: {
     banner: {
-      fontSize: { base: '4xl', md: '4rem' },
-      lineHeight: 1,
+      fontSize: { base: '3xl', md: '3.5rem' },
+      lineHeight: 1.1,
     },
     hero: {
-      fontSize: { base: '5xl', md: '6xl' },
-      lineHeight: 1,
+      fontSize: { base: '4xl', md: '5xl' },
+      lineHeight: 1.1,
+    },
+    '3xl': {
+      fontSize: { base: 'xl', md: '2xl' },
+      lineHeight: 1.2,
+    },
+    '2xl': {
+      fontSize: { base: 'lg', md: 'xl' },
+      lineHeight: 1.2,
+    },
+    'xl': {
+      fontSize: { base: 'md', md: 'lg' },
+      lineHeight: 1.3,
     },
   },
 }

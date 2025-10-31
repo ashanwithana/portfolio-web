@@ -61,9 +61,8 @@ export const Banner: React.FC = () => {
           as='h1'
           variant='banner'
           size='banner'
-          fontSize={{ base: '4xl', md: '5xl', lg: '6xl', xl: '7xl', '2xl': '8xl' }}
-          lineHeight={{ base: '1.1', xl: '1', '2xl': '0.95' }}
-          wordBreak='break-word'
+          fontSize={{ base: '3xl', md: '4xl', lg: '5xl', xl: '6xl', '2xl': '7xl' }}
+          lineHeight={{ base: '1.1', xl: '1.05', '2xl': '1' }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.2 }}
@@ -78,6 +77,7 @@ export const Banner: React.FC = () => {
           fontSize={{ base: 'md', xl: 'lg', '2xl': 'xl' }}
           px={{ base: 6, xl: 8, '2xl': 12 }}
           py={{ base: 3, xl: 4, '2xl': 6 }}
+          alignSelf={{ base: 'flex-start', md: 'flex-start' }}
           sx={{
             '&:hover svg': {
               transform: 'scaleX(1.1)',
@@ -88,7 +88,7 @@ export const Banner: React.FC = () => {
           transition={{ delay: 0.2, duration: 0.2 }}
           onClick={() => posthog.capture('hero_button_clicked')}
         >
-          <chakra.span mr='4'>{t('hero-cta')}</chakra.span>
+          <chakra.span mr={{ base: '2', md: '4' }}>{t('hero-cta')}</chakra.span>
           <ButtonArrow
             transformOrigin='left'
             transition='transform 0.2s ease-in-out, fill 0.2s ease-in-out'

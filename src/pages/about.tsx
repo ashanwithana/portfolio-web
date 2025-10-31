@@ -129,8 +129,10 @@ export default function AboutPage() {
                 <Heading
                   as='h1'
                   variant='sectionTitle'
-                  size='xl'
                   fontWeight='bold'
+                  whiteSpace='nowrap'
+                  textOverflow='ellipsis'
+                  overflow='hidden'
                 >
                   ASHAN WITHANA
                 </Heading>
@@ -210,12 +212,12 @@ export default function AboutPage() {
             </Box>
 
             {/* Work Experience Section */}
-            <VStack spacing={6} align='stretch'>
-              <Heading as='h2' size='xl' variant='sectionTitle'>
-                <Text mr={3} fontSize='xl'>
-                  <AppIcon iconName='briefcase' fontSize='xl' />
+            <VStack spacing={8} align='stretch'>
+              <Heading as='h2' variant='sectionTitle'>
+                <Text mr={3} fontSize='lg'>
+                  <AppIcon iconName='briefcase' fontSize='lg' />
                 </Text>
-                Work Experience
+                Professional{'\n'}Experience
               </Heading>
 
               <VStack spacing={6} align='stretch'>
@@ -365,9 +367,9 @@ export default function AboutPage() {
 
             {/* Education Section */}
             <VStack spacing={6} align='stretch'>
-              <Heading as='h2' size='xl' variant='sectionTitle'>
-                <Text mr={3} fontSize='xl'>
-                  <AppIcon iconName='education' fontSize='xl' />
+              <Heading as='h2' variant='sectionTitle'>
+                <Text mr={3} fontSize='lg'>
+                  <AppIcon iconName='education' fontSize='lg' />
                 </Text>
                 Education
               </Heading>
@@ -448,9 +450,9 @@ export default function AboutPage() {
 
             {/* Languages Section */}
             <VStack spacing={6} align='stretch'>
-              <Heading as='h2' size='xl' variant='sectionTitle'>
-                <Text mr={3} fontSize='xl'>
-                  <AppIcon iconName='trophy' fontSize='xl' />
+              <Heading as='h2' variant='sectionTitle'>
+                <Text mr={3} fontSize='lg'>
+                  <AppIcon iconName='trophy' fontSize='lg' />
                 </Text>
                 Languages
               </Heading>

@@ -231,8 +231,9 @@ export const Services: React.FC = () => {
             <Heading
               as='h1'
               variant='sectionTitle'
-              size='2xl'
-              textAlign='center'
+              whiteSpace='nowrap'
+              textOverflow='ellipsis'
+              overflow='hidden'
             >
               Services
             </Heading>

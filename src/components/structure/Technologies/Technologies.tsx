@@ -45,10 +45,8 @@ export const Technologies: React.FC = () => {
           as='h2'
           variant='sectionTitle'
           color='white'
-          size={{ base: 'xl', md: '2xl' }}
-          wordBreak={{ base: 'break-all', sm: 'break-word' }}
         >
-          Technical Expertise
+          Technical{'\n'}Expertise
         </Heading>
       </Box>
 

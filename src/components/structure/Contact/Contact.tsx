@@ -21,13 +21,15 @@ import { usePostHog } from 'posthog-js/react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
+import emailjs from '@emailjs/browser'
 import { env } from '@config/browser.env'
 import { config } from '@config/config'
 
 const ContactMeSchema = z
   .object({
-    email: z.string().email(),
-    message: z.string().min(1),
+    name: z.string().min(1, 'Name is required'),
+    email: z.string().email('Please enter a valid email address'),
+    message: z.string().min(10, 'Message must be at least 10 characters long'),
   })
   .strict()
 
@@ -49,34 +51,63 @@ export const Contact: React.FC = () => {
   const inputBg = useColorModeValue('gray.50', 'gray.700')
   const inputBorder = useColorModeValue('gray.200', 'gray.600')
 
+  // Initialize EmailJS once when component mounts
+  React.useEffect(() => {
+    emailjs.init(env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY)
+  }, [])
+
   const onSubmit = handleSubmit(async (data) => {
     try {
-      await fetch(env.NEXT_PUBLIC_FORMSPREE_URL, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      })
+      // Send email using EmailJS
+      const result = await emailjs.send(
+        env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+        {
+          from_name: data.name,
+          from_email: data.email,
+          message: data.message,
+          to_name: 'Ashan Withana',
+          reply_to: data.email,
+        }
+      )
+
+      console.log('EmailJS Success:', result)
 
       posthog.capture('contact_form_submitted_successfully', {
         email: data.email,
+        name: data.name,
       })
 
-      posthog.identify(data.email)
+      posthog.identify(data.email, {
+        name: data.name,
+      })
 
       toast({
-        title: 'Message Sent.',
-        description: "I'll respond to you promptly.",
+        title: 'Message Sent Successfully! 🎉',
+        description: "Thank you for reaching out! I'll get back to you within 24 hours.",
         status: 'success',
         duration: 7500,
         isClosable: true,
       })
 
-      reset()
-    } catch {
+      // Reset form after successful submission
+      reset({
+        name: '',
+        email: '',
+        message: '',
+      })
+    } catch (error) {
+      console.error('EmailJS Error:', error)
+
+      posthog.capture('contact_form_submission_failed', {
+        email: data.email,
+        name: data.name,
+        error: error instanceof Error ? error.message : 'Unknown error',
+      })
+
       toast({
-        title: 'There was an error sending your message.',
+        title: 'Failed to Send Message',
+        description: 'Please try again or reach out directly via email. Sorry for the inconvenience!',
         status: 'error',
         duration: 5000,
         isClosable: true,
@@ -183,6 +214,41 @@ export const Contact: React.FC = () => {
         flex='1'
         spacing={{ base: '4', md: '6' }}
       >
+        <FormControl isInvalid={!!errors.name}>
+          <FormLabel
+            fontWeight='semibold'
+            color={useColorModeValue('black', 'white')}
+            fontSize={{ base: 'sm', md: 'md' }}
+            mb={2}
+          >
+            Name
+          </FormLabel>
+          <Input
+            placeholder='Your full name'
+            {...register('name')}
+            bg={inputBg}
+            border='2px solid'
+            borderColor={inputBorder}
+            borderRadius='none'
+            py={{ base: 4, md: 6 }}
+            fontSize={{ base: 'sm', md: 'md' }}
+            _hover={{
+              borderColor: 'purple.300',
+            }}
+            _focus={{
+              borderColor: 'purple.500',
+              boxShadow: '0 0 0 1px var(--chakra-colors-purple-500)',
+            }}
+            transition='all 0.2s ease-in-out'
+          />
+          <FormErrorMessage
+            color={useColorModeValue('black', 'white')}
+            fontSize='sm'
+          >
+            {errors.name?.message}
+          </FormErrorMessage>
+        </FormControl>
+
         <FormControl isInvalid={!!errors.email}>
           <FormLabel
             fontWeight='semibold'

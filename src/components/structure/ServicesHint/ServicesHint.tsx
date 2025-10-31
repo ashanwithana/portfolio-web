@@ -48,8 +48,9 @@ export const ServicesHint: React.FC = () => {
           as='h2'
           variant='sectionTitle'
           color='gray.800'
-          size='2xl'
-          wordBreak={{ base: 'break-all', sm: 'break-word' }}
+          whiteSpace='nowrap'
+          textOverflow='ellipsis'
+          overflow='hidden'
         >
           Expertise
         </Heading>

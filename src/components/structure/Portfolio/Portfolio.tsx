@@ -35,12 +35,17 @@ export const Portfolio: React.FC = () => {
         as='section'
         align='stretch'
         py='20'
-        px={{ base: '4', md: '8' }}
+        px={{ base: '4', md: '8', xl: '12', '2xl': '16' }}
         spacing='16'
         scrollMarginTop='var(--chakra-sizes-header-height)'
       >
-        <Heading as='h2' variant='sectionTitle' size='2xl'>
-          {t('selected-projects')}
+        <Heading
+          as='h2'
+          variant='sectionTitle'
+          maxW={{ base: 'container.md', xl: 'container.lg', '2xl': 'container.xl' }}
+          w='full'
+        >
+          Selected{'\n'}Projects
         </Heading>
         <MotionVStack
           align='stretch'

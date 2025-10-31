@@ -49,10 +49,8 @@ export const SelectedProjects: React.FC = () => {
             as='h2'
             variant='sectionTitle'
             color='white'
-            size='2xl'
-            wordBreak={{ base: 'break-all', sm: 'break-word' }}
           >
-            {t('selected-projects')}
+            Selected{'\n'}Projects
           </Heading>
         </Box>
         <MotionVStack
