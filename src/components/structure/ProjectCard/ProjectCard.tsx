@@ -56,12 +56,15 @@ export const ProjectCard: React.FC<ProcessedRepo> = ({
       bg={bgColor}
       borderWidth='1px'
       borderColor={borderColor}
-      borderRadius='lg'
-      p={{ base: '4', md: '6' }}
+      borderRadius='none'
+      p={{ base: '5', md: '6' }}
       shadow='sm'
       position='relative'
       overflow='hidden'
       opacity={isArchived ? 0.7 : 1}
+      height='full'
+      display='flex'
+      flexDirection='column'
       whileHover={{
         y: -4,
         boxShadow: '0 10px 25px rgba(0, 0, 0, 0.1)',
@@ -94,7 +97,7 @@ export const ProjectCard: React.FC<ProcessedRepo> = ({
         )}
       </HStack>
 
-      <VStack align='stretch' spacing={{ base: '3', md: '4' }}>
+      <VStack align='stretch' spacing={{ base: '3', md: '4' }} height='full'>
         {/* Header */}
         <VStack align='stretch' spacing='2'>
           <Link
@@ -112,13 +115,22 @@ export const ProjectCard: React.FC<ProcessedRepo> = ({
                 color='blue.600'
                 _hover={{ color: 'blue.800' }}
                 transition='color 0.2s'
+                noOfLines={1}
+                wordBreak='break-word'
               >
                 {name}
               </Text>
             </HStack>
           </Link>
 
-          <Text color={textColor} fontSize='sm' lineHeight='tall'>
+          <Text
+            color={textColor}
+            fontSize='sm'
+            lineHeight='tall'
+            noOfLines={3}
+            wordBreak='break-word'
+            flex='1'
+          >
             {description}
           </Text>
         </VStack>

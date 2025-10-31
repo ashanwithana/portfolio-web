@@ -323,21 +323,24 @@ export const Header: React.FC = () => {
           boxShadow: '0 8px 32px rgba(99, 102, 241, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
           zIndex: -1,
         }}
-        py='4'
-        minH='16'
+        py='5'
+        minH='18'
         overflow='hidden'
       >
-        {/* Logo with modern styling */}
-        <Box position='relative'>
+        {/* Logo with modern styling and better touch target */}
+        <Box position='relative' minW='24' py='1' flex='1'>
           <Text
             as={NextLink}
             href='/'
             fontWeight='800'
-            fontSize='xl'
+            fontSize={{ base: 'xl', sm: '2xl' }}
             bgGradient='linear(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%)'
             bgClip='text'
             color='transparent'
             position='relative'
+            whiteSpace='nowrap'
+            overflow='hidden'
+            textOverflow='ellipsis'
             _before={{
               content: '""',
               position: 'absolute',
@@ -365,8 +368,8 @@ export const Header: React.FC = () => {
           </Text>
         </Box>
 
-        {/* Right side controls with modern floating design */}
-        <HStack spacing='3'>
+        {/* Right side controls with enhanced modern visual elements */}
+        <HStack spacing='4'>
           <IconButton
             aria-label={
               colorMode === 'light'
@@ -376,13 +379,15 @@ export const Header: React.FC = () => {
             icon={
               <AppIcon
                 iconName={colorMode === 'light' ? 'darkMode' : 'lightMode'}
-                strokeWidth={2.5}
-                boxSize={5}
+                strokeWidth={2}
+                boxSize={6}
               />
             }
             variant='ghost'
-            size='md'
-            borderRadius='12px'
+            size='lg'
+            borderRadius='16px'
+            minW='12'
+            minH='12'
             color={textColor}
             background='rgba(255, 255, 255, 0.05)'
             backdropFilter='blur(10px)'
@@ -413,13 +418,15 @@ export const Header: React.FC = () => {
             icon={
               <AppIcon
                 iconName={isOpen ? 'close' : 'menu'}
-                strokeWidth={2.5}
-                boxSize={5}
+                strokeWidth={2}
+                boxSize={6}
               />
             }
             variant='ghost'
-            size='md'
-            borderRadius='12px'
+            size='lg'
+            borderRadius='16px'
+            minW='12'
+            minH='12'
             color={isOpen ? 'white' : textColor}
             background={isOpen ? 'linear-gradient(135deg, #6366f1 0%, #a855f7 100%)' : 'rgba(255, 255, 255, 0.05)'}
             backdropFilter='blur(10px)'

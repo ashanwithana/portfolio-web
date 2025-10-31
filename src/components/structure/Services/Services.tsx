@@ -54,10 +54,12 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
       bg={cardBg}
       border='2px solid'
       borderColor={borderColor}
-      borderRadius='xl'
-      p={{ base: 6, lg: 5 }}
+      borderRadius='none'
+      p={{ base: '5', md: '6' }}
       position='relative'
       height='full'
+      display='flex'
+      flexDirection='column'
       _hover={{
         transform: 'translateY(-6px) scale(1.01)',
         boxShadow: '0 20px 40px rgba(0, 0, 0, 0.12)',
@@ -115,6 +117,9 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
               }
               fontWeight='bold'
               lineHeight='short'
+              noOfLines={2}
+              textAlign='center'
+              wordBreak='break-word'
             >
               {service.title}
             </Heading>
@@ -123,6 +128,8 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
               fontSize={{ base: 'md', lg: 'sm' }}
               lineHeight='snug'
               noOfLines={3}
+              textAlign='center'
+              wordBreak='break-word'
             >
               {service.description}
             </Text>

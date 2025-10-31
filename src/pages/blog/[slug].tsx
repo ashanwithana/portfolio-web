@@ -78,7 +78,7 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post }) => {
                 src={post.coverImage}
                 alt={post.title}
                 objectFit='cover'
-                borderRadius='md'
+                borderRadius='none'
               />
             </AspectRatio>
           )}
@@ -122,13 +122,13 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post }) => {
                 bg: 'gray.100',
                 px: '1',
                 py: '0.5',
-                borderRadius: 'sm',
+                borderRadius: 'none',
                 fontSize: 'sm',
               },
               '& pre': {
                 bg: 'gray.50',
                 p: '4',
-                borderRadius: 'md',
+                borderRadius: 'none',
                 overflow: 'auto',
                 mb: '4',
               },

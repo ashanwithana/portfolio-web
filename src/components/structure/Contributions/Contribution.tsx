@@ -42,19 +42,28 @@ export const Contribution: React.FC<ContributionProps> = ({
 }) => {
   return (
     <LinkBox
-      p='4'
+      p={{ base: '5', md: '6' }}
       borderColor='black'
       border='1px solid'
+      borderRadius='none'
       shadow={`8px 8px 0px 0px ${language.color}`}
       transition='all 0.1s ease-in-out'
       _hover={{ shadow: 'none', transform: 'translate(8px, 8px)' }}
+      height='full'
+      display='flex'
+      flexDirection='column'
     >
-      <Flex h='full' flexDir='column'>
+      <Flex height='full' flexDir='column'>
         <Flex justify='space-between' align='flex-start' mb='2'>
-          <HStack spacing='1' fontSize='xl' flex='1'>
-            <Text whiteSpace='nowrap'>{user}</Text>
-            <Text as='span'>/</Text>
-            <Text fontWeight='semibold'>
+          <HStack spacing='1' fontSize='xl' flex='1' minW='0'>
+            <Text whiteSpace='nowrap' flexShrink={0}>{user}</Text>
+            <Text as='span' flexShrink={0}>/</Text>
+            <Text
+              fontWeight='semibold'
+              noOfLines={1}
+              wordBreak='break-word'
+              minW='0'
+            >
               <LinkOverlay href={githubUrl} isExternal>
                 {repository}
               </LinkOverlay>
@@ -95,7 +104,13 @@ export const Contribution: React.FC<ContributionProps> = ({
         <Flex mt='2' mb='4'>
           <Badge colorScheme={role.color}>{role.label}</Badge>
         </Flex>
-        <Text flex='1' mb='4'>
+        <Text
+          flex='1'
+          mb='4'
+          noOfLines={4}
+          wordBreak='break-word'
+          lineHeight='tall'
+        >
           {description.en}
         </Text>
         <Flex justify='space-between'>

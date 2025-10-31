@@ -23,7 +23,7 @@ export const NavItem: React.FC<NavItemProps> = ({ name, href, onClose }) => {
       fontWeight='medium'
       color={isActive ? 'black' : 'gray.700'}
       bg={isActive ? 'rgba(99, 102, 241, 0.15)' : 'transparent'}
-      borderRadius='xl'
+      borderRadius='none'
       px='6'
       py='3'
       w='full'

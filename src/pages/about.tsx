@@ -104,7 +104,7 @@ export default function AboutPage() {
                 width='200px'
                 height='200px'
                 bg={cardBg}
-                borderRadius='md'
+                borderRadius='none'
                 shadow={`8px 8px 0px 0px ${useColorModeValue(
                   '#6366f1',
                   '#a855f7'
@@ -249,7 +249,7 @@ export default function AboutPage() {
                             src={job.logo}
                             alt={`${job.company} logo`}
                             boxSize='60px'
-                            borderRadius='md'
+                            borderRadius='none'
                             objectFit='cover'
                             border='2px solid'
                             borderColor={borderColor}

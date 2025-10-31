@@ -198,7 +198,7 @@ export const Contact: React.FC = () => {
             bg={inputBg}
             border='2px solid'
             borderColor={inputBorder}
-            borderRadius='lg'
+            borderRadius='none'
             py={{ base: 4, md: 6 }}
             fontSize={{ base: 'sm', md: 'md' }}
             _hover={{
@@ -233,7 +233,7 @@ export const Contact: React.FC = () => {
             bg={inputBg}
             border='2px solid'
             borderColor={inputBorder}
-            borderRadius='lg'
+            borderRadius='none'
             py={4}
             fontSize={{ base: 'sm', md: 'md' }}
             resize='vertical'
@@ -263,7 +263,7 @@ export const Contact: React.FC = () => {
           size={{ base: 'md', md: 'lg' }}
           height={{ base: '10', md: '12' }}
           px={{ base: 6, md: 8 }}
-          borderRadius='lg'
+          borderRadius='none'
           fontWeight='bold'
           fontSize='md'
           leftIcon={<AppIcon iconName='send' />}

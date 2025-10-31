@@ -58,7 +58,7 @@ const ContributionsPage: React.FC = () => {
                 pt='16'
                 pb='3'
                 bg='linear-gradient(90deg, #93A5CF 0%, #E4EFE9 100%)'
-                borderRadius='xl'
+                borderRadius='none'
               >
                 <Heading as='h1' color='white' size='2xl' textAlign='center'>
                   All Contributions
