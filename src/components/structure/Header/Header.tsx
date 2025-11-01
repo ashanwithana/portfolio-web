@@ -95,6 +95,8 @@ export const Header: React.FC = () => {
             px={{ base: '4', xl: '6', '2xl': '8' }}
             py={{ base: '2', xl: '3', '2xl': '4' }}
             fontSize={{ base: 'sm', xl: 'md', '2xl': 'lg' }}
+            textTransform='uppercase'
+            letterSpacing='0.05em'
             _hover={{
               bg: activeBg,
               color: hoverTextColor,
@@ -118,6 +120,8 @@ export const Header: React.FC = () => {
             px={{ base: '4', xl: '6', '2xl': '8' }}
             py={{ base: '2', xl: '3', '2xl': '4' }}
             fontSize={{ base: 'sm', xl: 'md', '2xl': 'lg' }}
+            textTransform='uppercase'
+            letterSpacing='0.05em'
             _hover={{
               bg: activeBg,
               color: hoverTextColor,
@@ -141,6 +145,8 @@ export const Header: React.FC = () => {
             px={{ base: '4', xl: '6', '2xl': '8' }}
             py={{ base: '2', xl: '3', '2xl': '4' }}
             fontSize={{ base: 'sm', xl: 'md', '2xl': 'lg' }}
+            textTransform='uppercase'
+            letterSpacing='0.05em'
             _hover={{
               bg: activeBg,
               color: hoverTextColor,
@@ -177,16 +183,18 @@ export const Header: React.FC = () => {
             as={NextLink}
             href='/contributions'
             variant='ghost'
-            size='sm'
+            size={{ base: 'sm', xl: 'md', '2xl': 'lg' }}
             fontWeight='medium'
             color={
               isActiveRoute('/contributions') ? activeTextColor : textColor
             }
             bg={isActiveRoute('/contributions') ? activeBg : 'transparent'}
             borderRadius='full'
-            px='4'
-            py='2'
-            fontSize='sm'
+            px={{ base: '4', xl: '6', '2xl': '8' }}
+            py={{ base: '2', xl: '3', '2xl': '4' }}
+            fontSize={{ base: 'sm', xl: 'md', '2xl': 'lg' }}
+            textTransform='uppercase'
+            letterSpacing='0.05em'
             _hover={{
               bg: activeBg,
               color: hoverTextColor,
@@ -202,14 +210,16 @@ export const Header: React.FC = () => {
             as={NextLink}
             href='/blog'
             variant='ghost'
-            size='sm'
+            size={{ base: 'sm', xl: 'md', '2xl': 'lg' }}
             fontWeight='medium'
             color={isActiveRoute('/blog') ? activeTextColor : textColor}
             bg={isActiveRoute('/blog') ? activeBg : 'transparent'}
             borderRadius='full'
-            px='4'
-            py='2'
-            fontSize='sm'
+            px={{ base: '4', xl: '6', '2xl': '8' }}
+            py={{ base: '2', xl: '3', '2xl': '4' }}
+            fontSize={{ base: 'sm', xl: 'md', '2xl': 'lg' }}
+            textTransform='uppercase'
+            letterSpacing='0.05em'
             _hover={{
               bg: activeBg,
               color: hoverTextColor,
@@ -225,13 +235,15 @@ export const Header: React.FC = () => {
             as={NextLink}
             href='/#contact'
             variant='ghost'
-            size='sm'
+            size={{ base: 'sm', xl: 'md', '2xl': 'lg' }}
             fontWeight='medium'
             color={textColor}
             borderRadius='full'
-            px='4'
-            py='2'
-            fontSize='sm'
+            px={{ base: '4', xl: '6', '2xl': '8' }}
+            py={{ base: '2', xl: '3', '2xl': '4' }}
+            fontSize={{ base: 'sm', xl: 'md', '2xl': 'lg' }}
+            textTransform='uppercase'
+            letterSpacing='0.05em'
             _hover={{
               bg: activeBg,
               color: hoverTextColor,

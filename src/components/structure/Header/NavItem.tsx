@@ -33,6 +33,8 @@ export const NavItem: React.FC<NavItemProps> = ({ name, href, onClose }) => {
       whiteSpace='nowrap'
       overflow='hidden'
       textOverflow='ellipsis'
+      textTransform='uppercase'
+      letterSpacing='0.05em'
       _hover={{
         bg: 'rgba(99, 102, 241, 0.15)',
         color: 'gray.900',
